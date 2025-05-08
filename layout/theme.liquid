@@ -253,10 +253,10 @@
           font-size: 1.6rem;
         }
       }
-
-      {{ 'fonts.css' | asset_url | stylesheet_tag }}
-      {{ 'global-style.css' | asset_url | stylesheet_tag }}
     {% endstyle %}
+
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'global-style.css' | asset_url | stylesheet_tag }}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
