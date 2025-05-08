@@ -1,0 +1,67 @@
+{% schema %}
+{
+  "name": "Dynamic Design Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Shape your future in digital design and creative coding."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Our latest report explores developments in generative industrial AI and how key trends like Agentic AI and Foundational Models will shape industrial applications in the coming years."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image",
+      "info": "Required: Please upload the hero image for this section"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RH Dynamic Design Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="rh-masterminds-hero-sec">
+  <div class="container-rh">
+    <div class="text-part">
+      <h2 class="sec-title">
+        {{ section.settings.title }}
+      </h2>
+      <p class="sec-des">
+        {{ section.settings.description }}
+      </p>
+      <a href="{{ section.settings.button_link }}" class="primary-button-master-minds">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+    <div class="image-part">
+      <img
+        src="{{ section.settings.image | img_url: '800x' }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="auto"
+        height="auto"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
