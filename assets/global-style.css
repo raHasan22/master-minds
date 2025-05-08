@@ -1,0 +1,11 @@
+.primary-button-master-minds {
+  background: linear-gradient(90deg, #00ffb9 0%, #00e6dc 100%);
+  padding: 15px 50px;
+  font-family: 'Siemens Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: normal;
+  color: #000028;
+  text-decoration: none;
+}

@@ -253,6 +253,9 @@
           font-size: 1.6rem;
         }
       }
+
+      {{ 'fonts.css' | asset_url | stylesheet_tag }}
+      {{ 'global-style.css' | asset_url | stylesheet_tag }}
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
