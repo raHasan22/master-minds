@@ -10,3 +10,9 @@
   text-decoration: none;
   width: fit-content;
 }
+@media (max-width: 1024px) {
+  .primary-button-master-minds {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
