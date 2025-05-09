@@ -86,11 +86,79 @@
         "button_link": "",
         "image": "shopify://shop_images/mm-hero-image.png"
       }
+    },
+    "rh_our_partners_sec_kTCJkj": {
+      "type": "rh-our-partners-sec",
+      "blocks": {
+        "partner_logo_9HkPMD": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3050.png"
+          }
+        },
+        "partner_logo_zrP7Kx": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3051.png"
+          }
+        },
+        "partner_logo_TmFyQH": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3052.png"
+          }
+        },
+        "partner_logo_Ujy9jH": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3053.png"
+          }
+        },
+        "partner_logo_HPNe6q": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3054.png"
+          }
+        },
+        "partner_logo_FwhdWn": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3055.png"
+          }
+        },
+        "partner_logo_xRYjk6": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3056.png"
+          }
+        },
+        "partner_logo_zjwiQw": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3057.png"
+          }
+        }
+      },
+      "block_order": [
+        "partner_logo_9HkPMD",
+        "partner_logo_zrP7Kx",
+        "partner_logo_TmFyQH",
+        "partner_logo_Ujy9jH",
+        "partner_logo_HPNe6q",
+        "partner_logo_FwhdWn",
+        "partner_logo_xRYjk6",
+        "partner_logo_zjwiQw"
+      ],
+      "name": "RH Our Partners",
+      "settings": {
+        "heading": "Unlock Your Team's Potential with 2000+ Accredited Courses!"
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "rh_homepage_hero_9kzVtr"
+    "rh_homepage_hero_9kzVtr",
+    "rh_our_partners_sec_kTCJkj"
   ]
 }
