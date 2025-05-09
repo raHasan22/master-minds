@@ -86,10 +86,29 @@
       "settings": {
         "heading": "Unlock Your Team's Potential with 2000+ Accredited Courses!"
       }
+    },
+    "rh_offer_ends_sec_bHT3Qr": {
+      "type": "rh-offer-ends-sec",
+      "name": "RH Offer Countdown",
+      "settings": {
+        "background_image": "shopify://shop_images/offer-sec-bg.png",
+        "tag_text": "Learn from the Best",
+        "title": "Enjoy over 100 Courses for Digital Creatives",
+        "description": "5+ new courses added every month.",
+        "old_price": "£25",
+        "new_price": "£12",
+        "button_text": "Start Learning",
+        "button_link": "",
+        "countdown_days": 6,
+        "countdown_hours": 5,
+        "countdown_minutes": 3,
+        "countdown_seconds": 2
+      }
     }
   },
   "order": [
     "rh_homepage_hero_9kzVtr",
-    "rh_our_partners_sec_kTCJkj"
+    "rh_our_partners_sec_kTCJkj",
+    "rh_offer_ends_sec_bHT3Qr"
   ]
 }
