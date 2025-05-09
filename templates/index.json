@@ -99,10 +99,10 @@
         "new_price": "£12",
         "button_text": "Start Learning",
         "button_link": "",
-        "countdown_days": 6,
-        "countdown_hours": 5,
-        "countdown_minutes": 3,
-        "countdown_seconds": 2
+        "countdown_days": 9,
+        "countdown_hours": 0,
+        "countdown_minutes": 0,
+        "countdown_seconds": 0
       }
     }
   },
