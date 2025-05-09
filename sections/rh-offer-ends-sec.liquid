@@ -1,0 +1,289 @@
+{% schema %}
+{
+  "name": "Offer Countdown",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Tag Text",
+      "default": "Learn from the Best"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Enjoy over 100 Courses for Digital Creatives"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "5+ new courses added every month."
+    },
+    {
+      "type": "text",
+      "id": "old_price",
+      "label": "Old Price",
+      "default": "£25"
+    },
+    {
+      "type": "text",
+      "id": "new_price",
+      "label": "New Price",
+      "default": "£12"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Start Learning"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "countdown_days",
+      "label": "Countdown Days",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 6,
+      "unit": "day"
+    },
+    {
+      "type": "range",
+      "id": "countdown_hours",
+      "label": "Countdown Hours",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 5,
+      "unit": "hrs"
+    },
+    {
+      "type": "range",
+      "id": "countdown_minutes",
+      "label": "Countdown Minutes",
+      "min": 0,
+      "max": 59,
+      "step": 1,
+      "default": 3,
+      "unit": "min"
+    },
+    {
+      "type": "range",
+      "id": "countdown_seconds",
+      "label": "Countdown Seconds",
+      "min": 0,
+      "max": 59,
+      "step": 1,
+      "default": 2,
+      "unit": "sec"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RH Offer Countdown",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}
+
+{%- style -%}
+  .rh-offer-ends-sec {
+    padding: 66px 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .rh-offer-ends-sec:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #00002899;
+    z-index: 0;
+  }
+  .rh-offer-ends-sec .container-rh {
+    max-width: 1478px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .rh-offer-ends-sec .container-rh .tag {
+    color: #00cccc;
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .rh-offer-ends-sec .container-rh .sec-title {
+    color: #ffffff;
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: normal;
+    text-align: center;
+    margin: 8px 0;
+  }
+  .rh-offer-ends-sec .container-rh .sec-des {
+    color: #ffffff;
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    margin: 0 0 24px;
+  }
+  .rh-offer-ends-sec .container-rh .price {
+    font-family: 'Siemens Sans';
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    color: #ffffff;
+    margin: 0 0 40px;
+  }
+  .rh-offer-ends-sec .container-rh .price .old-price {
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 90%;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  .rh-offer-ends-sec .container-rh .price .regular-price {
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 90%;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  .rh-offer-ends-sec .container-rh .timer-part {
+    margin: 24px 0 0;
+    color: #00cccc;
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: normal;
+  }
+  @media (max-width: 991px) {
+    .rh-offer-ends-sec .container-rh .tag {
+      font-size: 14px;
+    }
+    .rh-offer-ends-sec .container-rh .sec-title {
+      font-size: 30px;
+      margin: 6px 0;
+    }
+    .rh-offer-ends-sec .container-rh .sec-des {
+      font-size: 16px;
+      margin: 0 0 18px;
+    }
+    .rh-offer-ends-sec .container-rh .price {
+      margin: 0 0 30px;
+    }
+    .rh-offer-ends-sec .container-rh .price .old-price {
+      font-size: 30px;
+    }
+    .rh-offer-ends-sec .container-rh .price .regular-price {
+      font-size: 30px;
+    }
+    .rh-offer-ends-sec .container-rh .timer-part {
+      margin: 18px 0 0;
+      font-size: 16px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="rh-offer-ends-sec"
+  style="background-image: url('{% if section.settings.background_image != blank %}{{ section.settings.background_image | img_url: '2000x' }}{% else %}https://dummyimage.com/1920x1080/000000/ffffff&text=Offer+Ends+Soon{% endif %}')"
+>
+  <div class="container-rh">
+    <p class="tag">{{ section.settings.tag_text }}</p>
+    <h2 class="sec-title">{{ section.settings.title }}</h2>
+    <p class="sec-des">{{ section.settings.description }}</p>
+    <div class="price">
+      <del class="old-price">{{ section.settings.old_price }}</del>
+      <span class="regular-price"> {{ section.settings.new_price }} </span>
+      <sup> /month </sup>
+    </div>
+    <a href="{{ section.settings.button_link }}" class="primary-button-master-minds">
+      {{ section.settings.button_text }}
+    </a>
+    <h6 class="timer-part">
+      This offer ends in
+      <span class="day">{{ section.settings.countdown_days | default: '00' | prepend: '00' | slice: -2, 2 }}</span>d :
+      <span class="hours">{{ section.settings.countdown_hours | default: '00' | prepend: '00' | slice: -2, 2 }}</span>h
+      :
+      <span class="mnt">{{ section.settings.countdown_minutes | default: '00' | prepend: '00' | slice: -2, 2 }}</span>m
+      :
+      <span class="second">{{ section.settings.countdown_seconds | default: '00' | prepend: '00' | slice: -2, 2 }}</span
+      >s
+    </h6>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get initial values from section settings
+    let days = parseInt('{{ section.settings.countdown_days }}') || 0;
+    let hours = parseInt('{{ section.settings.countdown_hours }}') || 0;
+    let minutes = parseInt('{{ section.settings.countdown_minutes }}') || 0;
+    let seconds = parseInt('{{ section.settings.countdown_seconds }}') || 0;
+
+    // Calculate total seconds
+    let totalSeconds = days * 86400 + hours * 3600 + minutes * 60 + seconds;
+
+    // Update the count down every 1 second
+    const x = setInterval(function () {
+      // Calculate days, hours, minutes and seconds left
+      days = Math.floor(totalSeconds / 86400);
+      hours = Math.floor((totalSeconds % 86400) / 3600);
+      minutes = Math.floor((totalSeconds % 3600) / 60);
+      seconds = Math.floor(totalSeconds % 60);
+
+      // Display the result with leading zeros
+      document.querySelector('.timer-part .day').textContent = days.toString().padStart(2, '0');
+      document.querySelector('.timer-part .hours').textContent = hours.toString().padStart(2, '0');
+      document.querySelector('.timer-part .mnt').textContent = minutes.toString().padStart(2, '0');
+      document.querySelector('.timer-part .second').textContent = seconds.toString().padStart(2, '0');
+
+      // If the count down is finished, clear interval
+      if (totalSeconds <= 0) {
+        clearInterval(x);
+        document.querySelector('.timer-part').innerHTML = 'This offer has expired';
+      } else {
+        totalSeconds--;
+      }
+    }, 1000);
+  });
+</script>

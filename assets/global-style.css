@@ -9,6 +9,7 @@
   color: #000028;
   text-decoration: none;
   width: fit-content;
+  display: inline-block;
 }
 @media (max-width: 1024px) {
   .primary-button-master-minds {
