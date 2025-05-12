@@ -87,6 +87,19 @@
         "heading": "Unlock Your Team's Potential with 2000+ Accredited Courses!"
       }
     },
+    "rh_courses_section_t6KkTn": {
+      "type": "rh-courses-section",
+      "name": "Rh Collection Tabs",
+      "settings": {
+        "title": "Featured Courses",
+        "collection_list": [
+          "all-courses",
+          "development",
+          "personal-development"
+        ],
+        "products_limit": 9
+      }
+    },
     "rh_offer_ends_sec_bHT3Qr": {
       "type": "rh-offer-ends-sec",
       "name": "RH Offer Countdown",
@@ -104,25 +117,12 @@
         "countdown_minutes": 0,
         "countdown_seconds": 0
       }
-    },
-    "rh_courses_section_t6KkTn": {
-      "type": "rh-courses-section",
-      "name": "Rh Collection Tabs",
-      "settings": {
-        "title": "Featured Courses",
-        "collection_list": [
-          "all-courses",
-          "development",
-          "personal-development"
-        ],
-        "products_limit": 9
-      }
     }
   },
   "order": [
     "rh_homepage_hero_9kzVtr",
     "rh_our_partners_sec_kTCJkj",
-    "rh_offer_ends_sec_bHT3Qr",
-    "rh_courses_section_t6KkTn"
+    "rh_courses_section_t6KkTn",
+    "rh_offer_ends_sec_bHT3Qr"
   ]
 }
