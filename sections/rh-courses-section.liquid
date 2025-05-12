@@ -255,6 +255,7 @@
   .rh-course-card__author {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 4px;
   }
 
@@ -487,7 +488,6 @@
 </section>
 
 <script>
-  // Your existing JavaScript for tab functionality can go here
   document.addEventListener('DOMContentLoaded', function () {
     const tabButtons = document.querySelectorAll('.rh-tab-button');
     const tabContents = document.querySelectorAll('.rh-tab-content');
@@ -496,7 +496,6 @@
       button.addEventListener('click', function () {
         const target = this.getAttribute('data-tab');
 
-        // Remove active class from all buttons and contents
         tabButtons.forEach(function (btn) {
           btn.classList.remove('rh-active');
         });
@@ -504,7 +503,6 @@
           content.classList.remove('rh-active');
         });
 
-        // Add active class to clicked button and corresponding content
         this.classList.add('rh-active');
         document.getElementById(target).classList.add('rh-active');
       });
