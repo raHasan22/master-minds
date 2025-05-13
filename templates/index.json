@@ -117,12 +117,56 @@
         "countdown_minutes": 0,
         "countdown_seconds": 0
       }
+    },
+    "rh_reviews_xmpTzD": {
+      "type": "rh-reviews",
+      "blocks": {
+        "review_BLQdU6": {
+          "type": "review",
+          "settings": {
+            "name": "Crystal Maiden",
+            "role": "UIUX Designer",
+            "rating": 5,
+            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+          }
+        },
+        "review_RbYr4B": {
+          "type": "review",
+          "settings": {
+            "name": "Crystal Maiden",
+            "role": "UIUX Designer",
+            "rating": 5,
+            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+          }
+        },
+        "review_UA6jbd": {
+          "type": "review",
+          "settings": {
+            "name": "Crystal Maiden",
+            "role": "UIUX Designer",
+            "rating": 5,
+            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+          }
+        }
+      },
+      "block_order": [
+        "review_BLQdU6",
+        "review_RbYr4B",
+        "review_UA6jbd"
+      ],
+      "name": "RH Reviews Section",
+      "settings": {
+        "tag_text": "Learn from the Best",
+        "section_title": "Featured Courses",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "rh_homepage_hero_9kzVtr",
     "rh_our_partners_sec_kTCJkj",
     "rh_courses_section_t6KkTn",
-    "rh_offer_ends_sec_bHT3Qr"
+    "rh_offer_ends_sec_bHT3Qr",
+    "rh_reviews_xmpTzD"
   ]
 }
