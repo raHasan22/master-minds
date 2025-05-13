@@ -124,6 +124,7 @@
         "review_BLQdU6": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/image_2.png",
             "name": "Crystal Maiden",
             "role": "UIUX Designer",
             "rating": 5,
@@ -133,26 +134,39 @@
         "review_RbYr4B": {
           "type": "review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2_1.png",
+            "name": "Dazzle Healer",
+            "role": "Front End Developer",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "I’ve used other kits, but this one is the best. The attention to detail and usability are truly amazing for all designers. I highly recommend it for any type of project."
           }
         },
         "review_UA6jbd": {
           "type": "review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2_2.png",
+            "name": "Mirana Marci",
+            "role": "3D Designer",
             "rating": 5,
             "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+          }
+        },
+        "review_gy4WNF": {
+          "type": "review",
+          "settings": {
+            "avatar": "shopify://shop_images/image_2_3.png",
+            "name": "Bimosaurus",
+            "role": "Graphic Designer",
+            "rating": 5,
+            "review_text": "Amazing work! The color schemes are vibrant, and the icons fit perfectly with all my projects, especially modern UI designs. It makes everything look polished and user-friendly instantly."
           }
         }
       },
       "block_order": [
         "review_BLQdU6",
         "review_RbYr4B",
-        "review_UA6jbd"
+        "review_UA6jbd",
+        "review_gy4WNF"
       ],
       "name": "RH Reviews Section",
       "settings": {
