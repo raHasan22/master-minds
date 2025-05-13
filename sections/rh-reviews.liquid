@@ -1,0 +1,392 @@
+{%- style -%}
+  .rh-review-section {
+    padding: 80px 0 60px;
+    background-color: #000028;
+  }
+  .rh-review-section .container-rh-review .text-part {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+  }
+  .rh-review-section .container-rh-review .text-part .tag {
+    color: #00cccc;
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .rh-review-section .container-rh-review .text-part .sec-title {
+    font-family: 'Siemens Sans';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: normal;
+    color: #ffffff;
+    margin: 0;
+  }
+  .rh-review-section .container-rh-review .review-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .rh-review-section .container-rh-review .review-slider .normal-slider {
+    position: relative;
+    width: 100%;
+    animation: marquee 15s linear infinite;
+  }
+  .rh-review-section .container-rh-review .review-slider .reverse-slider {
+    position: relative;
+    width: 100%;
+    animation: marquee-reverse 15s linear infinite;
+  }
+  .rh-review-section .container-rh-review .review-slider > div {
+    display: flex;
+    gap: 24px;
+    margin: 0 0 24px;
+    width: 100%;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @media (max-width: 991px) {
+    .rh-review-section .container-rh-review .text-part .tag {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .rh-review-section .container-rh-review .text-part .sec-title {
+      font-size: 30px;
+      line-height: 110%;
+    }
+  }
+
+  /* card css  */
+  .rh-single-review {
+    width: 620px;
+    padding: 24px;
+    background: #00183c;
+    border-radius: 16px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .rh-single-review .rh-review-header {
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .rh-single-review .rh-avatar-placeholder {
+    width: 56px;
+    height: 56px;
+  }
+
+  .rh-single-review .rh-avatar-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+  }
+
+  .rh-single-review .rh-user-info {
+    flex: 1 1 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .rh-single-review .rh-user-name {
+    width: 284px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .rh-single-review .rh-user-role {
+    color: #bfbfc9;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+
+  .rh-single-review .rh-header-spacer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .rh-single-review .rh-divider {
+    width: 356px;
+    height: 0px;
+    outline: 1px #e9eff5 solid;
+    outline-offset: -0.5px;
+  }
+
+  .rh-single-review .rh-review-text {
+    align-self: stretch;
+    color: white;
+    font-size: 18px;
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    word-wrap: break-word;
+  }
+  @media (max-width: 767px) {
+    .rh-single-review {
+      width: 290px;
+      padding: 15px;
+    }
+    .rh-single-review .rh-user-info {
+      flex-wrap: wrap;
+    }
+    .rh-single-review .rh-divider {
+      width: 90%;
+    }
+    .rh-single-review .rh-user-name {
+      width: 280px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Reviews Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Tag Text",
+      "default": "Learn from the Best"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Featured Courses"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS",
+      "info": "Add your custom CSS here"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Crystal Maiden"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "UIUX Designer"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.5,
+          "label": "Rating (1-5 Stars)",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RH Reviews Section",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="rh-review-section">
+  <div class="container-rh-review">
+    <div class="text-part">
+      <p class="tag">{{ section.settings.tag_text }}</p>
+      <h2 class="sec-title">{{ section.settings.section_title }}</h2>
+    </div>
+    {% assign review_blocks = section.blocks %}
+    {% assign min_slides = 7 %}
+    {% assign total_slides = review_blocks.size %}
+    {% assign repeat_count = min_slides | divided_by: total_slides | ceil %}
+
+    <div class="review-slider">
+      <div class="normal-slider">
+        {% for i in (1..repeat_count) %}
+          {% for block in review_blocks %}
+            <div class="rh-single-review" {{ block.shopify_attributes }}>
+              <div class="rh-review-header">
+                <div class="rh-avatar-placeholder">
+                  {% if block.settings.avatar %}
+                    <img
+                      class="rh-avatar-image"
+                      src="{{ block.settings.avatar | img_url: '56x56', crop: 'center' }}"
+                      alt="{{ block.settings.name }}"
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <img
+                      class="rh-avatar-image"
+                      src="https://placehold.co/56x56"
+                      alt=""
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                    >
+                  {% endif %}
+                </div>
+
+                <div class="rh-user-info">
+                  <div class="rh-user-name">{{ block.settings.name }}</div>
+                  <div class="rh-user-role">{{ block.settings.role }}</div>
+                </div>
+                <div class="ks-star-rating">
+                  <svg viewBox="0 0 1000 200" class="rating">
+                    <defs>
+                      <polygon id="star" points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 "></polygon>
+                      <clipPath id="stars">
+                        <use xlink:href="#star"></use>
+                        <use xlink:href="#star" x="20%"></use>
+                        <use xlink:href="#star" x="40%"></use>
+                        <use xlink:href="#star" x="60%"></use>
+                        <use xlink:href="#star" x="80%"></use>
+                      </clipPath>
+                    </defs>
+                    <rect class="rating__background" clip-path="url(#stars)"></rect>
+                    <rect width="{{ block.settings.rating | times: 20 }}%" class="rating__value" clip-path="url(#stars)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="rh-divider"></div>
+              <div class="rh-review-text">
+                {{ block.settings.review_text }}
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="review-slider">
+      <div class="reverse-slider">
+        {% for i in (1..repeat_count) %}
+          {% for block in review_blocks %}
+            <div class="rh-single-review" {{ block.shopify_attributes }}>
+              <div class="rh-review-header">
+                <div class="rh-avatar-placeholder">
+                  {% if block.settings.avatar %}
+                    <img
+                      class="rh-avatar-image"
+                      src="{{ block.settings.avatar | img_url: '56x56', crop: 'center' }}"
+                      alt="{{ block.settings.name }}"
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <img
+                      class="rh-avatar-image"
+                      src="https://placehold.co/56x56"
+                      alt=""
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                    >
+                  {% endif %}
+                </div>
+
+                <div class="rh-user-info">
+                  <div class="rh-user-name">{{ block.settings.name }}</div>
+                  <div class="rh-user-role">{{ block.settings.role }}</div>
+                </div>
+                <div class="ks-star-rating">
+                  <svg viewBox="0 0 1000 200" class="rating">
+                    <defs>
+                      <polygon id="star" points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 "></polygon>
+                      <clipPath id="stars">
+                        <use xlink:href="#star"></use>
+                        <use xlink:href="#star" x="20%"></use>
+                        <use xlink:href="#star" x="40%"></use>
+                        <use xlink:href="#star" x="60%"></use>
+                        <use xlink:href="#star" x="80%"></use>
+                      </clipPath>
+                    </defs>
+                    <rect class="rating__background" clip-path="url(#stars)"></rect>
+                    <rect width="{{ block.settings.rating | times: 20 }}%" class="rating__value" clip-path="url(#stars)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="rh-divider"></div>
+              <div class="rh-review-text">
+                {{ block.settings.review_text }}
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
