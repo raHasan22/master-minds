@@ -31,139 +31,81 @@
   endif
 -%}
 
-<div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
-  <div
-    class="
-      card
-      card--{{ card_style }}
-      {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
-      {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
-      {% if extend_height %} card--extend-height{% endif %}
-      {% if card_collection.featured_image == nil and card_style == 'card' %} ratio{% endif %}
-    "
-    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
-  >
-    <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
-      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+<div class="rh-course-card-cmn">
+  {%- if card_collection.featured_image -%}
+    <img
+      class="rh-course-card__image"
+      srcset="
+        {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
+        {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+        {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+        {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
+      "
+      src="{{ card_collection.featured_image | image_url: width: 708, height: 424, crop: 'center' }}"
+      sizes="
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+        (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+        calc(100vw - 3rem)
+      "
+      alt="{{ card_collection.featured_image.alt | escape }}"
+      width="auto"
+      height="auto"
+      loading="lazy"
     >
-      {%- if card_collection.featured_image -%}
-        <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
-            <img
-              srcset="
-                {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 3000 -%}{{ card_collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
-              "
-              src="{{ card_collection.featured_image | image_url: width: 1500 }}"
-              sizes="
-                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
-                (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
-                calc(100vw - 3rem)
-              "
-              alt="{{ card_collection.featured_image.alt | escape }}"
-              height="{{ card_collection.featured_image.height }}"
-              width="{{ card_collection.featured_image.width }}"
-              loading="lazy"
-              class="motion-reduce"
-            >
-          </div>
-        </div>
-      {%- endif -%}
-      {%- if card_collection == blank -%}
-        <div class="card__media">
-          {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-        </div>
-      {%- else -%}
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a
-                {% if card_collection == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ card_collection.url }}"
-                {% endif %}
-                class="full-unstyled-link"
-              >
-                {%- if card_collection.title != blank -%}
-                  {{- card_collection.title | escape -}}
-                {%- else -%}
-                  {{ 'onboarding.collection_title' | t }}
-                {%- endif -%}
-                {%- if card_collection.description == blank -%}
-                  <span class="icon-wrap">
-                    {{- 'icon-arrow.svg' | inline_asset_content -}}
-                  </span>
-                {%- endif %}
-              </a>
-            </h3>
-            {%- if card_collection.description != blank -%}
-              <p class="card__caption">
-                {{- card_collection.description | strip_html | truncatewords: 12 -}}
-                <span class="icon-wrap">
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                </span>
-              </p>
-            {%- endif -%}
-          </div>
-        </div>
-      {%- endif -%}
+  {%- else -%}
+    <div class="rh-course-card__image">
+      {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
-            <a
-              {% if card_collection == blank %}
-                role="link" aria-disabled="true"
-              {% else %}
-                href="{{ card_collection.url }}"
-              {% endif %}
-              class="full-unstyled-link"
-            >
-              {%- if card_collection.title != blank -%}
-                {{- card_collection.title | escape -}}
-              {%- else -%}
-                {{ 'onboarding.collection_title' | t }}
-              {%- endif -%}
-              {%- if card_collection.featured_image or card_collection.description == blank -%}
-                <span class="icon-wrap">
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                </span>
-              {%- endif %}
-            </a>
-          </h3>
-          {%- if card_collection.featured_image == null and card_collection.description != blank -%}
-            <p class="card__caption">
-              {{- card_collection.description | strip_html | truncatewords: 12 -}}
-              <span class="icon-wrap">
-                {{- 'icon-arrow.svg' | inline_asset_content -}}
-              </span>
-            </p>
+  {%- endif -%}
+
+  <div class="rh-course-card__header">
+    <div class="rh-course-card__title-container">
+      <div class="rh-course-card__title">
+        <a href="{{ card_collection.url }}" class="full-unstyled-link">
+          {%- if card_collection.title != blank -%}
+            {{- card_collection.title | escape -}}
+          {%- else -%}
+            {{ 'onboarding.collection_title' | t }}
           {%- endif -%}
-        </div>
+        </a>
       </div>
-    {%- endif -%}
-    {%- if card_collection == blank -%}
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading card__heading--placeholder">
-            <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.collection_title' | t }}
-              <span class="icon-wrap">
-                {{- 'icon-arrow.svg' | inline_asset_content -}}
-              </span>
-            </a>
-          </h3>
-        </div>
+    </div>
+  </div>
+
+  <div class="rh-course-card__meta">
+    <div class="rh-course-card__author">
+      <span>Collection</span>
+      <span class="bold">{{ card_collection.all_products_count }} Products</span>
+    </div>
+  </div>
+
+  <div class="rh-course-card__footer">
+    <div class="rh-course-card__score-wrapper">
+      <div class="rh-course-card__score-label">
+        {% if card_collection.description != blank %}
+          {{ card_collection.description | strip_html | truncatewords: 12 }}
+        {% endif %}
       </div>
-    {%- endif -%}
+    </div>
+    <div class="rh-course-card__icon">
+      <a href="{{ card_collection.url }}">
+        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_88_480" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
+            <path d="M32 0.669434H0V32.6694H32V0.669434Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask0_88_480)">
+            <mask id="mask1_88_480" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
+              <path d="M0 0.669434H32V32.6694H0V0.669434Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask1_88_480)">
+              <path d="M29.232 16.123C29.2293 16.1166 29.226 16.1105 29.2233 16.1043C29.2095 16.0734 29.1953 16.0428 29.1791 16.0129C29.1667 15.9896 29.1527 15.9674 29.1389 15.945C29.1315 15.9329 29.1247 15.9205 29.1168 15.9086C29.0573 15.8182 28.9867 15.736 28.9076 15.6625L23.6161 10.371C23.0961 9.85096 22.2561 9.85096 21.7361 10.371C21.2161 10.891 21.2161 11.731 21.7361 12.251L24.7894 15.3043H4.00275C3.26943 15.3043 2.66943 15.9043 2.66943 16.6376C2.66943 17.371 3.26943 17.971 4.00275 17.971H24.7894L21.7227 21.0376C21.2027 21.5576 21.2027 22.3976 21.7227 22.9176C21.9894 23.171 22.3227 23.3043 22.6694 23.3043C23.0161 23.3043 23.3494 23.171 23.6161 22.9176L28.9494 17.5843C29.3453 17.1884 29.4389 16.6074 29.232 16.123Z" fill="#00CCCC"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
