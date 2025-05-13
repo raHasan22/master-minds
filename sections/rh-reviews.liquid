@@ -209,18 +209,50 @@
       "id": "section_title",
       "label": "Section Title",
       "default": "Featured Courses"
-    },
-    {
-      "type": "textarea",
-      "id": "custom_css",
-      "label": "Custom CSS",
-      "info": "Add your custom CSS here"
     }
   ],
   "blocks": [
     {
-      "type": "review",
-      "name": "Review",
+      "type": "normal_review",
+      "name": "Normal Slider Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Crystal Maiden"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "UIUX Designer"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.5,
+          "label": "Rating (1-5 Stars)",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+        }
+      ]
+    },
+    {
+      "type": "reverse_review",
+      "name": "Reverse Slider Review",
       "settings": [
         {
           "type": "image_picker",
@@ -262,13 +294,16 @@
       "name": "RH Reviews Section",
       "blocks": [
         {
-          "type": "review"
+          "type": "normal_review"
         },
         {
-          "type": "review"
+          "type": "normal_review"
         },
         {
-          "type": "review"
+          "type": "reverse_review"
+        },
+        {
+          "type": "reverse_review"
         }
       ]
     }
@@ -282,15 +317,21 @@
       <p class="tag">{{ section.settings.tag_text }}</p>
       <h2 class="sec-title">{{ section.settings.section_title }}</h2>
     </div>
-    {% assign review_blocks = section.blocks %}
+
+    {% assign normal_reviews = section.blocks | where: 'type', 'normal_review' %}
+    {% assign reverse_reviews = section.blocks | where: 'type', 'reverse_review' %}
+
     {% assign min_slides = 7 %}
-    {% assign total_slides = review_blocks.size %}
-    {% assign repeat_count = min_slides | divided_by: total_slides | ceil %}
+    {% assign normal_count = normal_reviews.size %}
+    {% assign reverse_count = reverse_reviews.size %}
+
+    {% assign normal_repeat = min_slides | divided_by: normal_count | ceil %}
+    {% assign reverse_repeat = min_slides | divided_by: reverse_count | ceil %}
 
     <div class="review-slider">
       <div class="normal-slider">
-        {% for i in (1..repeat_count) %}
-          {% for block in review_blocks %}
+        {% for i in (1..normal_repeat) %}
+          {% for block in normal_reviews %}
             <div class="rh-single-review" {{ block.shopify_attributes }}>
               <div class="rh-review-header">
                 <div class="rh-avatar-placeholder">
@@ -348,8 +389,8 @@
 
     <div class="review-slider">
       <div class="reverse-slider">
-        {% for i in (1..repeat_count) %}
-          {% for block in review_blocks %}
+        {% for i in (1..reverse_repeat) %}
+          {% for block in reverse_reviews %}
             <div class="rh-single-review" {{ block.shopify_attributes }}>
               <div class="rh-review-header">
                 <div class="rh-avatar-placeholder">
