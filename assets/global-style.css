@@ -32,7 +32,7 @@
 
 .rh-course-card-cmn .rh-course-card__image {
   align-self: stretch;
-  height: 424.45px;
+  height: 224.45px;
   width: 100%;
   object-fit: cover;
   border-top-left-radius: 14px;
@@ -206,7 +206,7 @@
 @media (max-width: 767px) {
   .rh-course-card-cmn .rh-course-card__image {
     align-self: stretch;
-    height: 304.45px !important;
+    height: 200.45px !important;
     width: 100%;
     object-fit: cover;
     border-top-left-radius: 14px;
