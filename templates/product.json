@@ -89,7 +89,7 @@
         "heading_size": "h1",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "color_scheme": "scheme-eb916b7a-39d2-4d3c-b072-ffaf7fc23748",
         "image_ratio": "square",
         "image_shape": "default",
