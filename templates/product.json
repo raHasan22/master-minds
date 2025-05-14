@@ -66,6 +66,7 @@
         "description",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-eb916b7a-39d2-4d3c-b072-ffaf7fc23748",
@@ -80,6 +81,17 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "rh_single_course_hero_67ERN6": {
+      "type": "rh-single-course-hero",
+      "name": "RH Single Course Hero",
+      "settings": {
+        "countdown_days": "8",
+        "countdown_hours": "0",
+        "countdown_minutes": "0",
+        "countdown_seconds": "0",
+        "custom_css": ""
       }
     },
     "related-products": {
@@ -103,6 +115,7 @@
   },
   "order": [
     "main",
+    "rh_single_course_hero_67ERN6",
     "related-products"
   ]
 }
