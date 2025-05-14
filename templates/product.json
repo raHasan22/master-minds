@@ -83,17 +83,6 @@
         "padding_bottom": 12
       }
     },
-    "rh_single_course_hero_67ERN6": {
-      "type": "rh-single-course-hero",
-      "name": "RH Single Course Hero",
-      "settings": {
-        "countdown_days": "8",
-        "countdown_hours": "0",
-        "countdown_minutes": "0",
-        "countdown_seconds": "0",
-        "custom_css": ""
-      }
-    },
     "rh_course_description_JPPMky": {
       "type": "rh-course-description",
       "name": "RH Course Description",
@@ -118,11 +107,22 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "rh_single_course_hero_NhHUJx": {
+      "type": "rh-single-course-hero",
+      "name": "RH Single Course Hero",
+      "settings": {
+        "countdown_days": "0",
+        "countdown_hours": "0",
+        "countdown_minutes": "0",
+        "countdown_seconds": "0",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
-    "rh_single_course_hero_67ERN6",
+    "rh_single_course_hero_NhHUJx",
     "rh_course_description_JPPMky",
     "related-products"
   ]
