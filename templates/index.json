@@ -122,7 +122,7 @@
       "type": "rh-reviews",
       "blocks": {
         "review_BLQdU6": {
-          "type": "review",
+          "type": "normal_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2.png",
             "name": "Crystal Maiden",
@@ -132,17 +132,17 @@
           }
         },
         "review_RbYr4B": {
-          "type": "review",
+          "type": "normal_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_1.png",
             "name": "Dazzle Healer",
             "role": "Front End Developer",
             "rating": 5,
-            "review_text": "I’ve used other kits, but this one is the best. The attention to detail and usability are truly amazing for all designers. I highly recommend it for any type of project."
+            "review_text": "I've used other kits, but this one is the best. The attention to detail and usability are truly amazing for all designers. I highly recommend it for any type of project."
           }
         },
         "review_UA6jbd": {
-          "type": "review",
+          "type": "reverse_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_2.png",
             "name": "Mirana Marci",
@@ -152,7 +152,7 @@
           }
         },
         "review_gy4WNF": {
-          "type": "review",
+          "type": "reverse_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_3.png",
             "name": "Bimosaurus",

@@ -1,0 +1,657 @@
+{% assign current_product = product %}
+
+<section class="rh-single-course-hero-sec">
+  <div class="container-rh">
+    <a href="/collections/all" class="back-to-courses">
+      <svg
+        width="17"
+        height="14"
+        viewBox="0 0 17 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.76 6.20003H17V7.72003H2.76L7.24 13.08L6.04 13.8L1.4 8.28003C0.76 7.56003 0.76 6.36003 1.4 5.64003L5.88 0.280029L7.08 1.00003L2.76 6.20003Z"
+          fill="white"
+        />
+      </svg>
+      Back to Courses
+    </a>
+    <div class="course-container">
+      <div class="left-top">
+        <div class="course-image">
+          {% if current_product.featured_image %}
+            <img
+              src="{{ current_product.featured_image | img_url: '845x475', crop: 'center' }}"
+              alt="{{ current_product.featured_image.alt | escape }}"
+              width="auto"
+              height="auto"
+            >
+          {% endif %}
+        </div>
+        <div class="course-features-col">
+          <div class="course-features">
+            {% assign has_certificate = current_product.metafields.custom.certificate | default: true %}
+            {% if has_certificate %}
+              <div class="cert feature">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.4544 2.59251C14.9603 2.40001 10.8078 1.71251 9.48778 0.887511C9.19443 0.704163 8.80943 0.704163 8.51608 0.887511C7.19608 1.71251 3.04358 2.40001 1.54943 2.59251C1.05443 2.65666 0.70608 3.10586 0.76108 3.60086L1.06358 6.32336C1.61358 10.4942 3.95112 14.1792 7.48028 16.4434L8.50693 17.1034C8.65358 17.2042 8.82778 17.25 9.00193 17.25C9.17608 17.25 9.35028 17.2042 9.49693 17.1034L10.5236 16.4434C14.0436 14.1792 16.3903 10.4942 16.9403 6.30501L17.2428 3.60086C17.2978 3.10586 16.9494 2.65666 16.4544 2.59251ZM13.3194 6.90086L8.73608 11.4842C8.55273 11.6583 8.32362 11.75 8.08528 11.75C7.84693 11.75 7.61778 11.6583 7.43443 11.4842L5.60108 9.65086C5.24358 9.29336 5.24358 8.70666 5.60108 8.34916C5.95858 7.99166 6.54528 7.99166 6.90278 8.34916L8.08528 9.54086L12.0178 5.59916C12.3753 5.24166 12.9619 5.24166 13.3194 5.59916C13.6769 5.95666 13.6769 6.54336 13.3194 6.90086Z"
+                    fill="white"
+                  />
+                </svg>
+                <span>Certificate of completion</span>
+              </div>
+            {% endif %}
+
+            {% assign lesson_count = current_product.metafields.custom.lessons | default: '10+ Lessons' %}
+            <div class="lesson feature">
+              <svg
+                width="15"
+                height="18"
+                viewBox="0 0 15 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.33327 7.12698C7.99166 7.12698 7.70837 6.84369 7.70837 6.50208V0.669678H2.47588C1.56769 0.669678 0.834473 1.40289 0.834473 2.31108V15.6839C0.834473 16.5921 1.56769 17.3337 2.47588 17.3337H12.5243C13.4325 17.3337 14.1657 16.5921 14.1657 15.6839V7.12698H8.33327ZM9.99967 14.0009H5.00047C4.54221 14.0009 4.16727 13.6259 4.16727 13.1677C4.16727 12.7094 4.54221 12.3345 5.00047 12.3345H9.99967C10.4579 12.3345 10.8329 12.7094 10.8329 13.1677C10.8329 13.6259 10.4579 14.0009 9.99967 14.0009ZM9.99967 10.6681H5.00047C4.54221 10.6681 4.16727 10.2931 4.16727 9.83488C4.16727 9.37662 4.54221 9.00168 5.00047 9.00168H9.99967C10.4579 9.00168 10.8329 9.37662 10.8329 9.83488C10.8329 10.2931 10.4579 10.6681 9.99967 10.6681ZM14.204 5.88468L9.00483 0.685509L8.9965 5.89467L14.204 5.88468Z"
+                  fill="white"
+                />
+              </svg>
+              <span>{{ lesson_count }}</span>
+            </div>
+
+            {% assign audio_lang = current_product.metafields.custom.audio_language | default: 'English' %}
+            <div class="audio feature">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.5 13.0145V11.4012V11.3702C15.5012 11.3263 15.5011 11.2825 15.5 11.2389V7.93192C15.5 3.834 12.2318 0.499878 8.21484 0.499878H7.81036C3.7796 0.499878 0.5 3.80348 0.5 7.86396V11.3332V12.9999C0.5 14.3784 1.6214 15.4999 3 15.4999H5.5C5.9606 15.4999 6.33332 15.1268 6.33332 14.6666V11.3332C6.33332 9.9546 5.21192 8.8332 3.83332 8.8332H3C2.70784 8.8332 2.42744 8.88408 2.16664 8.97656V7.86396C2.16664 4.72228 4.6984 2.16656 7.81036 2.16656H8.21484C11.313 2.16656 13.8333 4.7528 13.8333 7.93192V8.96676C13.5772 8.87936 13.3052 8.8332 13.0252 8.8332H12.1666C10.788 8.8332 9.66664 9.9546 9.66664 11.3332V14.6666C9.66664 15.1268 10.0394 15.4999 10.5 15.4999H13.0252C13.6958 15.4999 14.3468 15.2256 14.8115 14.7475C15.2738 14.2727 15.5179 13.6489 15.5 13.0145Z"
+                  fill="white"
+                />
+              </svg>
+              <span>Audio: {{ audio_lang }}</span>
+            </div>
+
+            {% assign available_langs = current_product.metafields.custom.available_languages | default: 'English' %}
+            <div class="language feature">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.11682 16.6916C6.1335 16.7416 6.15014 16.7916 6.17514 16.8416C3.21682 15.7749 1.0335 13.0749 0.708496 9.83325H5.0585C5.11682 12.4333 5.48346 14.8166 6.10014 16.6333C6.10846 16.6499 6.1085 16.6749 6.11682 16.6916Z"
+                  fill="white"
+                />
+                <path
+                  d="M5.0585 8.16664H0.708496C1.0335 4.92496 3.21682 2.22501 6.17514 1.15833C6.15014 1.20833 6.1335 1.25833 6.11682 1.30833C6.11682 1.32501 6.10846 1.34996 6.10014 1.36664C5.48346 3.18333 5.11682 5.56664 5.0585 8.16664Z"
+                  fill="white"
+                />
+                <path
+                  d="M6.7251 9.83325H11.2751C11.2168 12.2499 10.8668 14.5083 10.3001 16.1416C10.3001 16.1666 10.2917 16.1833 10.2834 16.2083C10.1417 16.6249 9.98346 16.9916 9.81678 17.2916C9.5501 17.3166 9.2751 17.3333 9.0001 17.3333C8.7251 17.3333 8.4501 17.3166 8.18342 17.2916C8.01674 16.9916 7.85846 16.6249 7.71678 16.2166C7.70846 16.1916 7.7001 16.1666 7.7001 16.1416C7.13342 14.5083 6.78342 12.2499 6.7251 9.83325Z"
+                  fill="white"
+                />
+                <path
+                  d="M11.2751 8.16663H6.7251C6.78342 5.74995 7.13342 3.49163 7.7001 1.85831C7.7001 1.83331 7.70846 1.81663 7.71678 1.79163C7.85846 1.37495 8.01674 1.00831 8.18342 0.708306C8.4501 0.683306 8.7251 0.666626 9.0001 0.666626C9.2751 0.666626 9.5501 0.683306 9.81678 0.708306C9.98346 1.00831 10.1417 1.37499 10.2834 1.78331C10.2917 1.80831 10.3001 1.83331 10.3001 1.85831C10.8668 3.49163 11.2168 5.74995 11.2751 8.16663Z"
+                  fill="white"
+                />
+                <path
+                  d="M12.9418 9.83325H17.2918C16.9668 13.0749 14.7835 15.7749 11.8252 16.8416C11.8502 16.7916 11.8668 16.7416 11.8835 16.6916C11.8835 16.6749 11.8919 16.6499 11.9002 16.6333C12.5169 14.8166 12.8835 12.4333 12.9418 9.83325Z"
+                  fill="white"
+                />
+                <path
+                  d="M11.8835 1.30833C11.8668 1.25833 11.8502 1.20833 11.8252 1.15833C14.7835 2.22501 16.9668 4.92496 17.2918 8.16664H12.9418C12.8835 5.56664 12.5169 3.18333 11.9002 1.36664C11.8919 1.34996 11.8918 1.32501 11.8835 1.30833Z"
+                  fill="white"
+                />
+              </svg>
+              <span>
+                {% if available_langs.size > 0 and available_langs != 'English' %}
+                  {% for language in available_langs %}
+                    <span class="lang">{{ language }}</span>
+                    {%- unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                {% else %}
+                  <span class="lang">English</span>
+                {% endif %}
+              </span>
+            </div>
+          </div>
+          {% if current_product.metafields.custom.collection_name %}
+            <div class="course-col">
+              course included in the
+              <a href="{{ current_product.metafields.custom.collection_url }}" class="collection">
+                {{- current_product.metafields.custom.collection_name -}}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        <h2 class="course-short-description">
+          {%- assign description = current_product.description | strip -%}
+          {%- assign first_sentence = description | split: '.' | first | append: '...' -%}
+          {{ first_sentence }}
+        </h2>
+      </div>
+      <div class="right-bottom">
+        {% if current_product.metafields.custom.collection_name %}
+          <div class="col-tag">
+            Included in the <span>{{ current_product.metafields.custom.collection_name }}</span>
+          </div>
+        {% endif %}
+        <h2 class="course-title">
+          {{ current_product.title }}
+        </h2>
+        <div class="rating-reviews">
+          <div class="ks-star-rating">
+            <svg viewBox="0 0 1000 200" class="rating">
+              <defs>
+                <polygon id="star" points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 "></polygon>
+                <clipPath id="stars">
+                  <use xlink:href="#star"></use>
+                  <use xlink:href="#star" x="20%"></use>
+                  <use xlink:href="#star" x="40%"></use>
+                  <use xlink:href="#star" x="60%"></use>
+                  <use xlink:href="#star" x="80%"></use>
+                </clipPath>
+              </defs>
+              <rect class="rating__background" clip-path="url(#stars)"></rect>
+              <rect width="{{ current_product.metafields.custom.rating | times: 20 }}%" class="rating__value" clip-path="url(#stars)"></rect>
+            </svg>
+          </div>
+          <span>{{ current_product.metafields.custom.reviews_count }} Reviews</span>
+        </div>
+        <div class="course-author">
+          A course by <strong>{{ current_product.vendor }}</strong>
+        </div>
+        <div class="course-price">
+          <span class="new-price">
+            {{ current_product.price | money }}
+          </span>
+          {% if current_product.compare_at_price > current_product.price %}
+            <del class="old-price">
+              {{ current_product.compare_at_price | money }}
+            </del>
+            <span class="discount">
+              {{
+                current_product.compare_at_price
+                | minus: current_product.price
+                | times: 100.0
+                | divided_by: current_product.compare_at_price
+                | round
+              -}}
+              % off
+            </span>
+          {% endif %}
+        </div>
+        <button
+          class="buy-button"
+          onclick="location.href='/cart/add?id={{ current_product.selected_or_first_available_variant.id }}&quantity=1'"
+        >
+          <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.7107 5.14967C25.4599 4.80987 25.0625 4.61012 24.6399 4.61036L8.73043 4.61924L8.54863 3.73282C8.20901 1.9293 6.6472 0.621046 4.83415 0.622058L1.99328 0.623645C1.25606 0.624057 0.66049 1.22163 0.660901 1.95751C0.661312 2.69339 1.25755 3.2903 1.99477 3.28989L4.83564 3.2883C5.36623 3.288 5.82637 3.68235 5.93334 4.2462L6.33704 6.22033C6.33704 6.22033 6.33971 6.22432 6.33971 6.22699C6.33971 6.22699 6.33971 6.23099 6.33972 6.23366L8.20559 14.8979C8.33791 15.5124 8.8794 15.9507 9.50864 15.9503L20.3682 15.9443C22.0533 15.9433 23.3525 14.8854 23.8355 13.1481L25.9153 6.33204C26.0391 5.92803 25.9615 5.48948 25.7107 5.14967Z" fill="#000028"/>
+            <path d="M11.3362 17.949C9.86573 17.9498 8.67059 19.1462 8.67141 20.6167C8.67223 22.0871 9.86871 23.2823 11.3391 23.2814C12.8096 23.2806 14.0047 22.0841 14.0039 20.6137C14.0031 19.1433 12.8066 17.9481 11.3362 17.949Z" fill="#000028"/>
+            <path d="M20.0012 17.9441C18.5308 17.9449 17.3356 19.1414 17.3365 20.6118C17.3373 22.0822 18.5337 23.2774 20.0042 23.2765C21.4746 23.2757 22.6698 22.0793 22.6689 20.6088C22.6681 19.1384 21.4716 17.9432 20.0012 17.9441Z" fill="#000028"/>
+          </svg>
+          Buy
+        </button>
+        {% assign has_countdown = false %}
+        {% if current_product.metafields.custom.countdown_end_date %}
+          {% assign has_countdown = true %}
+          <div class="countdown" data-end-date="{{ current_product.metafields.custom.countdown_end_date }}">
+            <span class="day">00d</span>: <span class="hour">00h</span>: <span class="minute">00m</span>:
+            <span class="second">00s</span>
+          </div>
+        {% elsif section.settings.countdown_days != '0'
+          or section.settings.countdown_hours != '0'
+          or section.settings.countdown_minutes != '0'
+          or section.settings.countdown_seconds != '0'
+        %}
+          {% assign has_countdown = true %}
+          <div class="countdown">
+            <span class="day">00d</span>: <span class="hour">00h</span>: <span class="minute">00m</span>:
+            <span class="second">00s</span>
+          </div>
+        {% endif %}
+        <div class="static-sec">
+          <div class="subscription">
+            <span class="fcp-tag"> full creative pass </span>
+            <span class="des">
+              Get access to this course and over 100 more for digital designers and creative developers, all for just
+              <span class="clr">$12/month</span>
+            </span>
+            <a href="/products/creative-pass" class="subs-button"> Subscribe now! </a>
+          </div>
+          <div class="subs-feature">
+            {{ 'visa-paypal-master.png' | asset_url | img_tag: 'Payment Methods', 'width="auto" height="auto"' }}
+            {{ 'moneyback.png' | asset_url | img_tag: 'Money Back Guarantee', 'width="auto" height="auto"' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- style -%}
+  .ks-star-rating {
+    width: 70px;
+  }
+  .ks-star-rating .rating__background {
+    fill: #bfc3ca;
+    stroke: red;
+    stroke-width: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  .ks-star-rating .rating__value {
+    fill: #00ffb9;
+    height: 100%;
+  }
+  .rh-single-course-hero-sec {
+    background-color: #000028;
+    padding: 40px 20px;
+  }
+  .rh-single-course-hero-sec .container-rh {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .rh-single-course-hero-sec .container-rh .back-to-courses {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #fff;
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+    margin: 0 0 24px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container {
+    display: flex;
+    gap: 64px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top {
+    width: 65%;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom {
+    width: 35%;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-image {
+    margin: 0 0 17px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-features {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-features .feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .rh-single-course-hero-sec
+    .container-rh
+    .course-container
+    .left-top
+    .course-features-col
+    .course-features
+    .feature
+    span {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    color: #fff;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-col {
+    width: 35%;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-col a {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #00ffb9;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .left-top .course-short-description {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 130%;
+    color: #fff;
+    margin: 40px 0 0;
+  }
+
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .col-tag {
+    background-color: #00ffb9;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000028;
+    display: inline-block;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-title {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: #fff;
+    margin: 8px 0 16px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .rating-reviews {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 0 16px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .rating-reviews span {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-author {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+    margin: 0 0 16px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-price {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    margin: 0 0 16px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-price .new-price {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: #fff;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-price .old-price {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #00cccc;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .course-price .discount {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #00cccc;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .buy-button {
+    background: linear-gradient(90deg, #00ffb9 0%, #00e6dc 100%);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000028;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .countdown {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #00cccc;
+    margin: 8px 0 8px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription {
+    border: 1px solid #00cccc;
+    border-radius: 8px;
+    padding: 30px;
+    background-color: transparent;
+    margin: 0 0 16px;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription .fcp-tag {
+    border: 1px solid #00cccc;
+    border-radius: 4px;
+    padding: 2px 8px;
+    background-color: transparent;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 10.14px;
+    line-height: 18px;
+    display: inline-block;
+    margin: 0 0 14px;
+    color: #00cccc;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription .des {
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin: 0 0 24px;
+    color: #fff;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription .des .clr {
+    color: #00cccc;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription .subs-button {
+    border: 1px solid #00cccc;
+    border-radius: 4px;
+    padding: 12px;
+    background-color: transparent;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #00cccc;
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subs-feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .rh-single-course-hero-sec .container-rh .course-container {
+      gap: 32px;
+    }
+  }
+  @media (max-width: 991px) {
+    .rh-single-course-hero-sec .container-rh .course-container {
+      flex-direction: column;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .left-top {
+      width: 100%;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .right-bottom {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col {
+      flex-direction: column;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-features,
+    .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-col {
+      width: 100%;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .left-top .course-features-col .course-features {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .left-top .course-short-description {
+      font-size: 26px;
+      margin: 20px 0 0;
+    }
+    .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription {
+      padding: 20px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Single Course Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Countdown Timer Settings"
+    },
+    {
+      "type": "text",
+      "id": "countdown_days",
+      "label": "Days",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "countdown_hours",
+      "label": "Hours",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "countdown_minutes",
+      "label": "Minutes",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "countdown_seconds",
+      "label": "Seconds",
+      "default": "0"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS",
+      "info": "Add custom CSS styles for this section"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RH Single Course Hero"
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.settings.custom_css != blank %}
+  <style>
+    {{ section.settings.custom_css }}
+  </style>
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function startCountdown(element) {
+      let endDate;
+
+      // Check if we have a metafield date
+      const metafieldDate = element.getAttribute('data-end-date');
+
+      if (metafieldDate && metafieldDate !== '') {
+        // If metafield exists, use it and ignore section settings
+        endDate = new Date(metafieldDate).getTime();
+      } else {
+        // Only use section settings if no metafield exists
+        const now = new Date();
+        const days = parseInt('{{ section.settings.countdown_days }}') || 0;
+        const hours = parseInt('{{ section.settings.countdown_hours }}') || 0;
+        const minutes = parseInt('{{ section.settings.countdown_minutes }}') || 0;
+        const seconds = parseInt('{{ section.settings.countdown_seconds }}') || 0;
+
+        endDate =
+          now.getTime() + days * 24 * 60 * 60 * 1000 + hours * 60 * 60 * 1000 + minutes * 60 * 1000 + seconds * 1000;
+      }
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          element.innerHTML = '00d: 00h: 00m: 00s';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        element.innerHTML = `
+          <span class="day">${String(days).padStart(2, '0')}d</span>: 
+          <span class="hour">${String(hours).padStart(2, '0')}h</span>: 
+          <span class="minute">${String(minutes).padStart(2, '0')}m</span>: 
+          <span class="second">${String(seconds).padStart(2, '0')}s</span>
+        `;
+      }
+
+      // Update immediately and then every second
+      updateCountdown();
+      return setInterval(updateCountdown, 1000);
+    }
+
+    // Start countdown for each countdown element
+    const countdownElements = document.querySelectorAll('.countdown');
+    countdownElements.forEach((element) => {
+      startCountdown(element);
+    });
+  });
+</script>
