@@ -130,11 +130,11 @@
               </span>
             </div>
           </div>
-          {% if current_product.metafields.custom.collection_name %}
+          {% if current_product.collections.first %}
             <div class="course-col">
               course included in the
-              <a href="{{ current_product.metafields.custom.collection_url }}" class="collection">
-                {{- current_product.metafields.custom.collection_name -}}
+              <a href="{{ current_product.collections.first.url }}" class="collection">
+                {{- current_product.collections.first.title -}}
               </a>
             </div>
           {% endif %}
@@ -146,9 +146,9 @@
         </h2>
       </div>
       <div class="right-bottom">
-        {% if current_product.metafields.custom.collection_name %}
+        {% if current_product.collections.first %}
           <div class="col-tag">
-            Included in the <span>{{ current_product.metafields.custom.collection_name }}</span>
+            Included in the <span>{{ current_product.collections.first.title }}</span>
           </div>
         {% endif %}
         <h2 class="course-title">
@@ -225,7 +225,7 @@
             <span class="second">00s</span>
           </div>
         {% endif %}
-        <div class="static-sec">
+        <div class="static-sec{% unless has_countdown %} no-countdown{% endunless %}">
           <div class="subscription">
             <span class="fcp-tag"> full creative pass </span>
             <span class="des">
@@ -542,6 +542,9 @@
     .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec .subscription {
       padding: 20px;
     }
+  }
+  .rh-single-course-hero-sec .container-rh .course-container .right-bottom .static-sec.no-countdown {
+    margin-top: 24px;
   }
 {%- endstyle -%}
 
