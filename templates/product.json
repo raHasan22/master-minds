@@ -94,6 +94,13 @@
         "custom_css": ""
       }
     },
+    "rh_course_description_JPPMky": {
+      "type": "rh-course-description",
+      "name": "RH Course Description",
+      "settings": {
+        "custom_css": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -116,6 +123,7 @@
   "order": [
     "main",
     "rh_single_course_hero_67ERN6",
+    "rh_course_description_JPPMky",
     "related-products"
   ]
 }
