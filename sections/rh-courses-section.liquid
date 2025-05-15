@@ -447,7 +447,7 @@
 
                   <div class="rh-course-card__footer">
                     <div class="rh-course-card__score-wrapper">
-                      {% assign rating = product.metafields.reviews.rating.value.rating | default: 5 %}
+                      {% assign rating = product.metafields.custom.course_rating.value | default: 5 %}
                       {% assign rating_max = product.metafields.reviews.rating.value.scale_max | default: 5 %}
                       <div class="rh-course-card__score-label">
                         Score <span class="bold">{{ rating | round: 1 }}/{{ rating_max }}</span>
