@@ -35,7 +35,7 @@
               <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 8.65991L4.5 12.1599L15 1.15991" stroke="#00FFB9" stroke-width="1.5"/>
               </svg>
-              <span>English, Spanish, French, Japanese, Italian, Portuguese (Machine translation)</span>
+              <span>English</span>
             </li>
           {% endif %}
 
@@ -64,7 +64,11 @@
             <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 8.65991L4.5 12.1599L15 1.15991" stroke="#00FFB9" stroke-width="1.5"/>
             </svg>
-            <span>{{ current_product.metafields.custom.course_duration | default: 'Full time access' }}</span>
+            {% if current_product.metafields.custom.course_access_duration != blank %}
+              <span>{{ current_product.metafields.custom.course_access_duration }}</span>
+            {% else %}
+              <span>{{ section.settings.duration_text | default: 'Full time access' }}</span>
+            {% endif %}
           </li>
 
           {% comment %}Feature 5: Certificate{% endcomment %}
