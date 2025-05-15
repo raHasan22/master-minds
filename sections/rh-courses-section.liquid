@@ -62,6 +62,7 @@
     letter-spacing: normal;
     text-align: center;
     margin: 0px 0 40px;
+    text-decoration: none;
   }
 
   /* Container for tabs */
@@ -335,7 +336,7 @@
   }
 
   .rh-course-card__score-bar-fill {
-    display: block;
+    display: block !important;
     height: 4px;
     background: #00ffb9;
     flex: 1 1 0;
@@ -376,7 +377,7 @@
 <section class="rh-course-section-mm">
   <div class="container-rh">
     <p class="tag">Learn from the Best</p>
-    <h2 class="sec-title">Featured Courses</h2>
+    <a href="{{ product.url }}" class="sec-title">Featured Courses</a>
     <div class="rh-tabs">
       <div class="rh-tab-buttons">
         {% for collection in section.settings.collection_list %}
