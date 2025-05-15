@@ -50,7 +50,7 @@
               </div>
             {% endif %}
 
-            {% assign lesson_count = current_product.metafields.custom.lessons | default: '10+ Lessons' %}
+            {% assign lesson_count = current_product.metafields.custom.lessons_count | default: '10+ Lessons' %}
             <div class="lesson feature">
               <svg
                 width="15"
