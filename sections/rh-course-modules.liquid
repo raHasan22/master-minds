@@ -6,7 +6,7 @@
 
     {% if current_product.metafields.courses_plus_content.course_outline != blank %}
       <div class="rh-modules-list">
-        {{ current_product.metafields.courses_plus_content.course_outline }}
+        {{ current_product.metafields.courses_plus_content.course_outline.value }}
       </div>
     {% else %}
       {% if section.settings.show_placeholder %}
