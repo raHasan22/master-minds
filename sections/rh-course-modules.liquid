@@ -4,17 +4,9 @@
   <div class="container-rh">
     <h2 class="rh-section-title">{{ section.settings.title | default: 'Course Modules' }}</h2>
 
-    {% if current_product.metafields.courses_plus_content.course_outline != blank %}
-      <div class="rh-modules-list">
-        {{ current_product.metafields.courses_plus_content.course_outline.course_plus_content.value }}
-      </div>
-    {% else %}
-      {% if section.settings.show_placeholder %}
-        <div class="rh-module-placeholder">
-          <p>Course content will appear here once added through Course Plus.</p>
-        </div>
-      {% endif %}
-    {% endif %}
+    <div class="rh-modules-list">
+      {{ current_product.metafields.courses_plus_content.course_outline.course_plus_content.value }}
+    </div>
   </div>
 </section>
 
