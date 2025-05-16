@@ -1,0 +1,84 @@
+{% assign current_product = product %}
+
+<section id="courseplus-modules-section" class="courseplus-section">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+
+    <div class="courseplus-container">
+      <!-- Course Plus app will inject content here -->
+      <div
+        id="courseplus-modules-{{ current_product.id }}"
+        class="courseplus-modules"
+        data-product-id="{{ current_product.id }}"
+        data-section-id="{{ section.id }}"
+        data-section-type="courseplus-modules"
+      ></div>
+
+      <!-- These are alternative IDs that Course Plus might look for -->
+      <div id="coursify-{{ current_product.id }}" class="coursify-container"></div>
+      <div id="course-plus-{{ current_product.id }}" class="course-plus-container"></div>
+    </div>
+
+    <!-- App blocks for Course Plus -->
+    {%- for block in section.blocks -%}
+      {% render block %}
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+  .courseplus-section {
+    padding: 60px 20px;
+    background-color: #000028;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .courseplus-section .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .courseplus-section .section-title {
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 130%;
+    color: white;
+    margin: 0 0 30px;
+  }
+
+  @media (max-width: 768px) {
+    .courseplus-section {
+      padding: 40px 20px;
+    }
+
+    .courseplus-section .section-title {
+      font-size: 26px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Course Plus Modules",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Course Modules"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Course Plus Modules"
+    }
+  ]
+}
+{% endschema %}
