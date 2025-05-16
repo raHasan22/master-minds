@@ -131,15 +131,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "rh_course_modules_HrHUTh": {
-      "type": "rh-course-modules",
-      "name": "RH Course Plus Modules",
-      "settings": {
-        "title": "Course Modules",
-        "show_lessons": true,
-        "show_placeholder": true
-      }
     }
   },
   "order": [
@@ -147,7 +138,6 @@
     "rh_single_course_hero_NhHUJx",
     "rh_course_description_JPPMky",
     "rh_course_features_4yWM9n",
-    "related-products",
-    "rh_course_modules_HrHUTh"
+    "related-products"
   ]
 }
