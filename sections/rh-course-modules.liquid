@@ -3,6 +3,7 @@
 <section class="rh-course-modules">
   <div class="container-rh">
     <h2 class="rh-section-title">{{ section.settings.title | default: 'Course Modules' }}</h2>
+    <div>{{ current_product.metafields.courses_plus_content.course_outline | json }}</div>
 
     {% if current_product.metafields.courses_plus_content.course_outline != blank %}
       <div class="rh-modules-list">
