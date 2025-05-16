@@ -101,6 +101,36 @@
         "custom_css": ""
       }
     },
+    "17473703618df8ef32": {
+      "type": "apps",
+      "blocks": {
+        "courses_plus_course_contents_prod_7hpcmK": {
+          "type": "shopify://apps/courses-plus/blocks/course-contents-prod/ce230994-1eaa-437b-a472-ab50f3058a28",
+          "settings": {
+            "display_block_header": true,
+            "block_header_text": "Course contents:",
+            "toggle_content_block": "true"
+          }
+        }
+      },
+      "block_order": [
+        "courses_plus_course_contents_prod_7hpcmK"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rh_course_features_4yWM9n": {
+      "type": "rh-course-features",
+      "name": "RH Course Features",
+      "settings": {
+        "content_title": "Course Content",
+        "features_title": "Features",
+        "access_text": "Access on mobile and Desktop",
+        "duration_text": "Full time access",
+        "custom_css": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -118,23 +148,13 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "rh_course_features_4yWM9n": {
-      "type": "rh-course-features",
-      "name": "RH Course Features",
-      "settings": {
-        "content_title": "Course Content",
-        "features_title": "Features",
-        "access_text": "Access on mobile and Desktop",
-        "duration_text": "Full time access",
-        "custom_css": ""
-      }
     }
   },
   "order": [
     "main",
     "rh_single_course_hero_NhHUJx",
     "rh_course_description_JPPMky",
+    "17473703618df8ef32",
     "rh_course_features_4yWM9n",
     "related-products"
   ]
