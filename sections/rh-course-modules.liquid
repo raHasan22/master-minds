@@ -1,11 +1,43 @@
+{% comment %}
+  RH Course Modules Section
+  Uses metafields from: product.metafields.courses_plus_content.course_outline
+{% endcomment %}
+
 {% assign current_product = product %}
 
 <section class="rh-course-modules">
   <div class="container-rh">
     <h2 class="rh-section-title">{{ section.settings.title | default: 'Course Modules' }}</h2>
 
-    <div class="rh-modules-list">
-      {{ current_product.metafields.courses_plus_content.course_outline.course_plus_content.value }}
+    <div class="course-accordion">
+      {% assign course_outline = current_product.metafields.courses_plus_content.course_outline.value %}
+
+      {% for section in course_outline %}
+        {% unless section.removed == 1 %}
+          <div class="accordion-section">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="section-{{ section.id }}">
+              <span class="section-title">{{ section.title }}</span>
+              <span class="accordion-icon">+</span>
+            </button>
+
+            <div class="accordion-content" id="section-{{ section.id }}">
+              {% if section.lessons.size > 0 %}
+                <ul class="lesson-list">
+                  {% for lesson in section.lessons %}
+                    {% unless lesson[1].removed == 1 %}
+                      <li class="lesson-item">
+                        {{ lesson[1].title }}
+                      </li>
+                    {% endunless %}
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <p>No lessons available for this section.</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -30,20 +62,96 @@
     line-height: 130%;
     color: white;
     margin: 0 0 30px;
-  }
-
-  .rh-modules-list {
-    color: white;
-    font-family: 'Siemens Sans', sans-serif;
-  }
-
-  .rh-module-placeholder {
     text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    color: white;
+  }
+
+  .course-accordion {
+    width: 100%;
+    margin: 0 auto;
     font-family: 'Siemens Sans', sans-serif;
+  }
+
+  .accordion-section {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .accordion-toggle {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+    font-family: 'Siemens Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .accordion-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .section-title {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .accordion-icon {
+    font-size: 20px;
+    color: #00ffb9;
+  }
+
+  .accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
+  }
+
+  .accordion-content[aria-hidden='false'] {
+    padding: 20px;
+    max-height: 1000px;
+  }
+
+  .lesson-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+  }
+
+  .lesson-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .lesson-item:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.65991L4.5 12.1599L15 1.15991' stroke='%2300FFB9' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    margin-right: 12px;
+  }
+
+  .lesson-item:last-child {
+    border-bottom: none;
   }
 
   @media (max-width: 768px) {
@@ -54,30 +162,57 @@
     .rh-course-modules .rh-section-title {
       font-size: 26px;
     }
+
+    .accordion-toggle {
+      padding: 15px;
+      font-size: 16px;
+    }
+
+    .accordion-content[aria-hidden='false'] {
+      padding: 15px;
+    }
+
+    .lesson-item {
+      font-size: 14px;
+    }
   }
 </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+    accordionToggles.forEach((toggle) => {
+      toggle.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        // Toggle aria attributes
+        this.setAttribute('aria-expanded', !isExpanded);
+        content.setAttribute('aria-hidden', isExpanded);
+
+        // Toggle icon
+        const icon = this.querySelector('.accordion-icon');
+        icon.textContent = isExpanded ? '+' : '-';
+      });
+    });
+  });
+</script>
+
 {% schema %}
 {
-  "name": "Course Plus Modules",
+  "name": "Course Modules",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Section Title",
       "default": "Course Modules"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_placeholder",
-      "label": "Show Placeholder",
-      "default": true,
-      "info": "Show a placeholder message when no course content is available"
     }
   ],
   "presets": [
     {
-      "name": "RH Course Plus Modules",
+      "name": "RH Course Modules",
       "category": "Course"
     }
   ]
