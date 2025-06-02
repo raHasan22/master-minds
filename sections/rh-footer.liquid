@@ -399,31 +399,24 @@
       </div>
       <div class="mm-footer-right">
         <div class="newsletter">
-          {% form 'newsletter'
-            , class: 'mm-newsletter-form' %}
+          {%- form 'newsletter'
+            , class: 'mm-newsletter-form' -%}
             <div class="mm-certificate-validator">
               <div class="mm-validator-title">Newsletter</div>
               <div class="mm-validator-desc">Subscribe to our newsletter for updates and exclusive offers.</div>
             </div>
-            {% if form.posted_successfully? %}
-              <p class="newsletter-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
-            {% endif %}
             <div class="mm-validator-input">
-              <input
-                type="hidden"
-                name="contact[tags]"
-                value="newsletter">
               <input
                 type="email"
                 name="contact[email]"
                 class="mm-input-field"
-                placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                placeholder="{{ 'newsletter.label' | t }}"
                 required>
               <button type="submit" class="mm-search-icon">
-                {% render 'icon-submit' %}
+                <span>{{ 'newsletter.button_label' | t }}</span>
               </button>
             </div>
-          {% endform %}
+          {%- endform -%}
         </div>
       </div>
     </div>
