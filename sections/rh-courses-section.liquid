@@ -1,36 +1,36 @@
 {% schema %}
-{
-  "name": "Collection Tabs",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Featured Courses"
-    },
-    {
-      "type": "collection_list",
-      "id": "collection_list",
-      "label": "Collections",
-      "limit": 3
-    },
-    {
-      "type": "range",
-      "id": "products_limit",
-      "min": 4,
-      "max": 12,
-      "step": 1,
-      "label": "Products to show per collection",
-      "default": 8
-    }
-  ],
-  "presets": [
-    {
-      "name": "Rh Collection Tabs",
-      "category": "Collection"
-    }
-  ]
-}
+  {
+    "name": "Collection Tabs",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Featured Courses"
+      },
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections",
+        "limit": 3
+      },
+      {
+        "type": "range",
+        "id": "products_limit",
+        "min": 4,
+        "max": 12,
+        "step": 1,
+        "label": "Products to show per collection",
+        "default": 8
+      }
+    ],
+    "presets": [
+      {
+        "name": "RH Collection Tabs",
+        "category": "Collection"
+      }
+    ]
+  }
 {% endschema %}
 
 {%- style -%}
@@ -61,7 +61,7 @@
     line-height: 130%;
     letter-spacing: normal;
     text-align: center;
-    margin: 0px 0 40px;
+    margin: 0 0 40px;
   }
 
   /* Container for tabs */
@@ -381,20 +381,14 @@
     <div class="rh-tabs">
       <div class="rh-tab-buttons">
         {% for collection in section.settings.collection_list %}
-          <button
-            class="rh-tab-button {% if forloop.first %}rh-active{% endif %}"
-            data-tab="rh-tab-{{ collection.handle }}"
-          >
+          <button class="rh-tab-button {% if forloop.first %}rh-active{% endif %}" data-tab="rh-tab-{{ collection.handle }}">
             {{ collection.title }}
           </button>
         {% endfor %}
       </div>
       <div class="rh-tab-contents">
         {% for collection in section.settings.collection_list %}
-          <div
-            class="rh-tab-content {% if forloop.first %}rh-active{% endif %}"
-            id="rh-tab-{{ collection.handle }}"
-          >
+          <div class="rh-tab-content {% if forloop.first %}rh-active{% endif %}" id="rh-tab-{{ collection.handle }}">
             <div class="course-cards">
               {% for product in collection.products limit: section.settings.products_limit %}
                 <div class="rh-course-card">
@@ -403,8 +397,7 @@
                     src="{{ product.featured_image | img_url: '708x424', crop: 'center' }}"
                     alt="{{ product.featured_image.alt }}"
                     width="auto"
-                    height="auto"
-                  >
+                    height="auto">
 
                   <div class="rh-course-card__header">
                     <div class="rh-course-card__title-container">
@@ -430,10 +423,10 @@
                       {% if product.compare_at_price > product.price %}
                         <div class="rh-course-card__discount">
                           {% assign discount = product.compare_at_price
-                            | minus: product.price
-                            | times: 100.0
-                            | divided_by: product.compare_at_price
-                            | round
+ | minus: product.price
+ | times: 100.0
+ | divided_by: product.compare_at_price
+ | round
                           %}
                           {{ discount }}% off<br>
                           <span class="rh-course-card__old-price">
@@ -442,8 +435,8 @@
                         </div>
                       {% endif %}
                       <div class="rh-course-card__price">
-                        <sup>{{ cart.currency.symbol }}</sup>{{ product.price | money_without_currency }}
-                      </div>
+                        <sup>{{ cart.currency.symbol }}</sup>
+                        {{ product.price | money_without_currency }}</div>
                     </div>
                   </div>
 
@@ -452,44 +445,58 @@
                       {% assign rating = product.metafields.custom.course_rating.value | default: 5 %}
                       {% assign rating_max = product.metafields.reviews.rating.value.scale_max | default: 5 %}
                       <div class="rh-course-card__score-label">
-                        Score <span class="bold">{{ rating | round: 1 }}/{{ rating_max }}</span>
+                        Score
+                        <span class="bold">{{ rating | round: 1 }}/{{ rating_max }}</span>
                       </div>
                       <div class="rh-course-card__score-bar-bg">
-                        <div
-                          class="rh-course-card__score-bar-fill"
-                          style="width: {{ rating | divided_by: rating_max | times: 100 }}%"
-                        ></div>
+                        <div class="rh-course-card__score-bar-fill" style="width: {{ rating | divided_by: rating_max | times: 100 }}%"></div>
                       </div>
                     </div>
                     <div class="rh-course-card__icon">
                       <a href="{{ product.url }}">
-                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <mask id="mask0_88_480" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
-                            <path d="M32 0.669434H0V32.6694H32V0.669434Z" fill="white"/>
+                        <svg
+                          width="32"
+                          height="33"
+                          viewBox="0 0 32 33"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <mask
+                            id="mask0_88_480"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="32"
+                            height="33">
+                            <path d="M32 0.669434H0V32.6694H32V0.669434Z" fill="white" />
                           </mask>
                           <g mask="url(#mask0_88_480)">
-                            <mask id="mask1_88_480" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
-                              <path d="M0 0.669434H32V32.6694H0V0.669434Z" fill="white"/>
-                            </mask>
-                            <g mask="url(#mask1_88_480)">
-                              <path d="M29.232 16.123C29.2293 16.1166 29.226 16.1105 29.2233 16.1043C29.2095 16.0734 29.1953 16.0428 29.1791 16.0129C29.1667 15.9896 29.1527 15.9674 29.1389 15.945C29.1315 15.9329 29.1247 15.9205 29.1168 15.9086C29.0573 15.8182 28.9867 15.736 28.9076 15.6625L23.6161 10.371C23.0961 9.85096 22.2561 9.85096 21.7361 10.371C21.2161 10.891 21.2161 11.731 21.7361 12.251L24.7894 15.3043H4.00275C3.26943 15.3043 2.66943 15.9043 2.66943 16.6376C2.66943 17.371 3.26943 17.971 4.00275 17.971H24.7894L21.7227 21.0376C21.2027 21.5576 21.2027 22.3976 21.7227 22.9176C21.9894 23.171 22.3227 23.3043 22.6694 23.3043C23.0161 23.3043 23.3494 23.171 23.6161 22.9176L28.9494 17.5843C29.3453 17.1884 29.4389 16.6074 29.232 16.123Z" fill="#00CCCC"/>
-                            </g>
+                          <mask
+                            id="mask1_88_480"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="32"
+                            height="33">
+                            <path d="M0 0.669434H32V32.6694H0V0.669434Z" fill="white" />
+                          </mask>
+                          <g mask="url(#mask1_88_480)">
+                            <path d="M29.232 16.123C29.2293 16.1166 29.226 16.1105 29.2233 16.1043C29.2095 16.0734 29.1953 16.0428 29.1791 16.0129C29.1667 15.9896 29.1527 15.9674 29.1389 15.945C29.1315 15.9329 29.1247 15.9205 29.1168 15.9086C29.0573 15.8182 28.9867 15.736 28.9076 15.6625L23.6161 10.371C23.0961 9.85096 22.2561 9.85096 21.7361 10.371C21.2161 10.891 21.2161 11.731 21.7361 12.251L24.7894 15.3043H4.00275C3.26943 15.3043 2.66943 15.9043 2.66943 16.6376C2.66943 17.371 3.26943 17.971 4.00275 17.971H24.7894L21.7227 21.0376C21.2027 21.5576 21.2027 22.3976 21.7227 22.9176C21.9894 23.171 22.3227 23.3043 22.6694 23.3043C23.0161 23.3043 23.3494 23.171 23.6161 22.9176L28.9494 17.5843C29.3453 17.1884 29.4389 16.6074 29.232 16.123Z" fill="#00CCCC" />
                           </g>
-                        </svg>
-                      </a>
-                    </div>
+                        </g>
+                      </svg>
+                    </a>
                   </div>
                 </div>
-              {% endfor %}
-            </div>
+              </div>
+            {% endfor %}
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
-</section>
-
-<script>
+</div></section><script>
   document.addEventListener('DOMContentLoaded', function () {
     const tabButtons = document.querySelectorAll('.rh-tab-button');
     const tabContents = document.querySelectorAll('.rh-tab-content');
