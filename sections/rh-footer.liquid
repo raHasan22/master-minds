@@ -1,7 +1,12 @@
 {% schema %}
   {
-    "name": "Footer",
+    "name": "RH Footer",
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Footer Logo"
+      },
       {
         "type": "link_list",
         "id": "footer_menu_1",
@@ -47,7 +52,18 @@
     ],
     "presets": [
       {
-        "name": "RH Footer"
+        "name": "RH Footer",
+        "blocks": [
+          {
+            "type": "social_media"
+          },
+          {
+            "type": "social_media"
+          },
+          {
+            "type": "social_media"
+          }
+        ]
       }
     ]
   }
@@ -382,7 +398,7 @@
       </div>
       <div class="mm-footer-right">
         <div class="newsletter">
-          {% form 'customer'
+          {% form 'newsletter'
             , class: 'mm-newsletter-form' %}
             <div class="mm-certificate-validator">
               <div class="mm-validator-title">Newsletter</div>
