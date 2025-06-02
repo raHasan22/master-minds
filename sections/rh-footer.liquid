@@ -247,9 +247,20 @@
   }
 
   /* Newsletter Form Styles */
+  .newsletter {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .footer__newsletter {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
   .newsletter-form__field-wrapper {
     position: relative;
     width: 100%;
+    margin-top: 24px;
   }
 
   .field {
@@ -300,7 +311,25 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+  }
+
+  .newsletter-form__button .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .newsletter-form__button svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
   }
 
   .newsletter-form__message {
@@ -310,24 +339,34 @@
     gap: 8px;
   }
 
+  .newsletter-form__message .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .newsletter-form__message svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .newsletter-form__message--success {
     color: #00E6DC;
   }
 
-  .form__message {
-    font-size: 14px;
+  .newsletter-form__message--success svg {
+    stroke: #00E6DC;
   }
 
   #ContactFooter-error {
     color: #ff0000;
   }
 
-  .svg-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
+  #ContactFooter-error svg {
+    stroke: #ff0000;
   }
 
   /* Responsive Styles for Footer */
@@ -378,6 +417,14 @@
     .mm-legal-links {
       flex-wrap: wrap;
       gap: 20px;
+    }
+
+    .newsletter {
+      margin-top: 30px;
+    }
+
+    .newsletter-form__field-wrapper {
+      margin-top: 16px;
     }
   }
 
