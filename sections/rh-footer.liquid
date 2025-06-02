@@ -385,7 +385,8 @@
         </div>
         <div class="mm-footer-links">
           {% for i in (1..4) %}
-            {% assign menu = section.settings['footer_menu_' | append: i] %}
+            {%- assign menu_setting = 'footer_menu_' | append: i -%}
+            {% assign menu = section.settings[menu_setting] %}
             {% if menu != blank %}
               <div class="mm-footer-links-col">
                 {% for link in menu.links %}
