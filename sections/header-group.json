@@ -35,7 +35,7 @@
       "type": "rh-header",
       "name": "RH Header",
       "settings": {
-        "logo": "shopify://shop_images/Mater_Mind_1.png",
+        "logo": "shopify://shop_images/master_minds.png",
         "menu": "main-menu"
       }
     }
