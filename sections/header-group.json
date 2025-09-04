@@ -11,30 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-eb916b7a-39d2-4d3c-b072-ffaf7fc23748",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "header",
       "disabled": true,
@@ -59,12 +35,12 @@
       "type": "rh-header",
       "name": "RH Header",
       "settings": {
+        "logo": "shopify://shop_images/Mater_Mind_1.png",
         "menu": "main-menu"
       }
     }
   },
   "order": [
-    "announcement-bar",
     "header",
     "rh_header_tfkaUp"
   ]
