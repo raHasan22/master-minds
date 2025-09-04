@@ -298,7 +298,7 @@
     <div class="mm-header__left">
       <a href="{{ routes.root_url }}" class="mm-header__logo">
         {%- if section.settings.logo != blank -%}
-          {{ section.settings.logo | image_url: width: 150 | image_tag: loading: 'lazy', class: 'mm-header__logo-image' }}
+          {{ section.settings.logo | image_url: width: auto | image_tag: loading: 'lazy', class: 'mm-header__logo-image' }}
         {%- else -%}
           {{ shop.name }}
         {%- endif -%}
