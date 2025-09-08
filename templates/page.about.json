@@ -99,11 +99,29 @@
       "settings": {
         "heading": "Unlock Your Team's Potential with 2000+ Accredited Courses!"
       }
+    },
+    "rh_about_info_detail_DAxyrc": {
+      "type": "rh-about-info-detail",
+      "name": "About Info Detail Section",
+      "settings": {
+        "image_1": "shopify://shop_images/Rectangle_34624364.png",
+        "text_1": "The Masterminds recognize the talent and effort of the best web designers, developers and agencies in the world.",
+        "image_2": "shopify://shop_images/Rectangle_34624365.png",
+        "text_2_normal": "A meeting point, where digital design professionals from across the globe find inspiration, impart knowledge and connect, and share constructive, respectful critiques.",
+        "text_2_bold": "Always questioning, always evolving",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "gap_between_columns": 60,
+        "font_size_desktop": 22,
+        "font_size_tablet": 18,
+        "font_size_mobile": 16
+      }
     }
   },
   "order": [
     "main",
     "rh_homepage_hero_yxUaaY",
-    "rh_our_partners_sec_FGFXEX"
+    "rh_our_partners_sec_FGFXEX",
+    "rh_about_info_detail_DAxyrc"
   ]
 }
