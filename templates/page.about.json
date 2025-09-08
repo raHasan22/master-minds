@@ -170,7 +170,7 @@
         "button_link": "shopify://collections/all",
         "flex_direction": "row",
         "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_bottom": 100,
         "gap_between_elements": 60,
         "title_font_size_desktop": 40,
         "title_font_size_tablet": 32,
