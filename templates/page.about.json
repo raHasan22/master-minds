@@ -116,12 +116,34 @@
         "font_size_tablet": 18,
         "font_size_mobile": 16
       }
+    },
+    "rh_about_reversable_site_detail_BUXFkX": {
+      "type": "rh-about-reversable-site-detail",
+      "name": "About Reversable Site Detail",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_34624364_1.png",
+        "title": "Who are the Mastermind jury?",
+        "description": "A panel of expert digital creatives, made up of designers, developers, and agencies from all over the world who have demonstrated their talent and experience in the field of digital design. Their role is to assess and carefully score the web projects that are submitted to Masterminds on a daily basis.",
+        "button_text": "More Info",
+        "button_link": "shopify://collections/all",
+        "flex_direction": "row",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "gap_between_elements": 60,
+        "title_font_size_desktop": 40,
+        "title_font_size_tablet": 32,
+        "title_font_size_mobile": 28,
+        "description_font_size_desktop": 18,
+        "description_font_size_tablet": 16,
+        "description_font_size_mobile": 14
+      }
     }
   },
   "order": [
     "main",
     "rh_homepage_hero_yxUaaY",
     "rh_our_partners_sec_FGFXEX",
-    "rh_about_info_detail_DAxyrc"
+    "rh_about_info_detail_DAxyrc",
+    "rh_about_reversable_site_detail_BUXFkX"
   ]
 }
