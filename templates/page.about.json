@@ -27,10 +27,78 @@
         "button_link": "shopify://collections/all",
         "image": "shopify://shop_images/OBJECTS.png"
       }
+    },
+    "rh_our_partners_sec_FGFXEX": {
+      "type": "rh-our-partners-sec",
+      "blocks": {
+        "partner_logo_gyYziT": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3050.png"
+          }
+        },
+        "partner_logo_naH93U": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3051.png"
+          }
+        },
+        "partner_logo_QCbyUq": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3052.png"
+          }
+        },
+        "partner_logo_QdmYee": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3053.png"
+          }
+        },
+        "partner_logo_fat8te": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3054.png"
+          }
+        },
+        "partner_logo_9XJE8g": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3055.png"
+          }
+        },
+        "partner_logo_gCbWbt": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3056.png"
+          }
+        },
+        "partner_logo_4HXNJr": {
+          "type": "partner_logo",
+          "settings": {
+            "image": "shopify://shop_images/Frame_3057.png"
+          }
+        }
+      },
+      "block_order": [
+        "partner_logo_gyYziT",
+        "partner_logo_naH93U",
+        "partner_logo_QCbyUq",
+        "partner_logo_QdmYee",
+        "partner_logo_fat8te",
+        "partner_logo_9XJE8g",
+        "partner_logo_gCbWbt",
+        "partner_logo_4HXNJr"
+      ],
+      "name": "RH Our Partners",
+      "settings": {
+        "heading": "Unlock Your Team's Potential with 2000+ Accredited Courses!"
+      }
     }
   },
   "order": [
     "main",
-    "rh_homepage_hero_yxUaaY"
+    "rh_homepage_hero_yxUaaY",
+    "rh_our_partners_sec_FGFXEX"
   ]
 }
