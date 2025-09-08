@@ -116,12 +116,78 @@
         "font_size_tablet": 18,
         "font_size_mobile": 16
       }
+    },
+    "rh_about_reversable_site_detail_BUXFkX": {
+      "type": "rh-about-reversable-site-detail",
+      "name": "About Reversable Site Detail",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_34624364_1.png",
+        "title": "Who are the Mastermind jury?",
+        "description": "A panel of expert digital creatives, made up of designers, developers, and agencies from all over the world who have demonstrated their talent and experience in the field of digital design. Their role is to assess and carefully score the web projects that are submitted to Masterminds on a daily basis.",
+        "button_text": "More Info",
+        "button_link": "shopify://collections/all",
+        "flex_direction": "row",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "gap_between_elements": 60,
+        "title_font_size_desktop": 40,
+        "title_font_size_tablet": 32,
+        "title_font_size_mobile": 28,
+        "description_font_size_desktop": 18,
+        "description_font_size_tablet": 16,
+        "description_font_size_mobile": 14
+      }
+    },
+    "rh_about_reversable_site_detail_iAXgYE": {
+      "type": "rh-about-reversable-site-detail",
+      "name": "About Reversable Site Detail",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_34624364_2.png",
+        "title": "Digital Thinkers Conferences",
+        "description": "Our conferences offer a space for our community to meet in person, share ideas, learn and be inspired by talks and workshops from the most visionary speakers in the industry. The events take place in iconic cities across the world from San Francisco, New York and L.A., to Tokyo, Paris, Berlin, Amsterdam and London.",
+        "button_text": "More Info",
+        "button_link": "",
+        "flex_direction": "row-reverse",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "gap_between_elements": 60,
+        "title_font_size_desktop": 40,
+        "title_font_size_tablet": 32,
+        "title_font_size_mobile": 28,
+        "description_font_size_desktop": 18,
+        "description_font_size_tablet": 16,
+        "description_font_size_mobile": 14
+      }
+    },
+    "rh_about_reversable_site_detail_LMU46T": {
+      "type": "rh-about-reversable-site-detail",
+      "name": "About Reversable Site Detail",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_34624364_3.png",
+        "title": "We also love to write books",
+        "description": "Our editorial range includes: a yearly publication Hot Right Now: A Contemporary Landscape for Digital Thinkers which presents insights into the current paradigm shifts, technologies and trends - as well as a collection of e-books made in collaboration with the brightest minds in the industry.",
+        "button_text": "More Info",
+        "button_link": "shopify://collections/all",
+        "flex_direction": "row",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "gap_between_elements": 60,
+        "title_font_size_desktop": 40,
+        "title_font_size_tablet": 32,
+        "title_font_size_mobile": 28,
+        "description_font_size_desktop": 18,
+        "description_font_size_tablet": 16,
+        "description_font_size_mobile": 14
+      }
     }
   },
   "order": [
     "main",
     "rh_homepage_hero_yxUaaY",
     "rh_our_partners_sec_FGFXEX",
-    "rh_about_info_detail_DAxyrc"
+    "rh_about_info_detail_DAxyrc",
+    "rh_about_reversable_site_detail_BUXFkX",
+    "rh_about_reversable_site_detail_iAXgYE",
+    "rh_about_reversable_site_detail_LMU46T"
   ]
 }
