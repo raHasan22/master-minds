@@ -25,7 +25,12 @@
         "description": "",
         "button_text": "Learn More",
         "button_link": "shopify://collections/all",
-        "image": "shopify://shop_images/OBJECTS.png"
+        "image": "shopify://shop_images/OBJECTS.png",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "title_font_size_desktop": 60,
+        "title_font_size_tablet": 38,
+        "title_font_size_mobile": 28
       }
     },
     "rh_our_partners_sec_FGFXEX": {
