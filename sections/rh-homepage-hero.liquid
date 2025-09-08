@@ -97,9 +97,7 @@
 {% style %}
   /* Hero section  */
   .rh-masterminds-hero-sec {
-    padding: {{ section.settings.padding_top }}
-    px 20px{{ section.settings.padding_bottom }}
-    px 20px;
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
     background: #000028;
   }
   .rh-masterminds-hero-sec .container-rh {
@@ -144,9 +142,7 @@
   }
   @media (max-width: 1024px) {
     .rh-masterminds-hero-sec {
-      padding: {{ section.settings.padding_top | divided_by: 2.5 }}
-      px 20px{{ section.settings.padding_bottom | divided_by: 2.5 }}
-      px 20px;
+      padding: {{ section.settings.padding_top | divided_by: 2.5 }}px 20px {{ section.settings.padding_bottom | divided_by: 2.5 }}px;
       background: #000028;
     }
     .rh-masterminds-hero-sec .container-rh {
@@ -168,9 +164,7 @@
   }
   @media (max-width: 767px) {
     .rh-masterminds-hero-sec {
-      padding: {{ section.settings.padding_top | divided_by: 3 }}
-      px 20px{{ section.settings.padding_bottom | divided_by: 3 }}
-      px 20px;
+      padding: {{ section.settings.padding_top | divided_by: 3 }}px 20px {{ section.settings.padding_bottom | divided_by: 3 }}px;
     }
     .rh-masterminds-hero-sec .container-rh {
       flex-direction: column-reverse;
