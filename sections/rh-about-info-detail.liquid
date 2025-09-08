@@ -1,0 +1,254 @@
+{% schema %}
+{
+  "name": "About Info Detail",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First Image"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "First Text Content",
+      "default": "The Masterminds recognize the talent and effort of the best web designers, developers and agencies in the world."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second Image"
+    },
+    {
+      "type": "text",
+      "id": "text_2_normal",
+      "label": "Second Text - Normal Weight",
+      "default": "A meeting point, where digital design professionals from across the globe find inspiration, impart knowledge and connect, and share constructive, respectful critiques."
+    },
+    {
+      "type": "text",
+      "id": "text_2_bold",
+      "label": "Second Text - Bold Weight",
+      "default": "Always questioning, always evolving"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "gap_between_columns",
+      "label": "Gap Between Columns (px)",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font Size - Desktop (px)",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "font_size_tablet",
+      "label": "Font Size - Tablet (px)",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Font Size - Mobile (px)",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Info Detail Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+    .rh-about-info-detail{
+    background: #000028;
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+}
+
+.rh-about-info-detail .container_rh{
+    max-width: 1284px;
+    margin: 0 auto;
+}
+
+/* Main content layout */
+.content-wrapper__rh {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: {{ section.settings.gap_between_columns }}px;
+    flex-wrap: wrap;
+}
+
+/* Content columns */
+.content-column__rh {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Content image wrapper */
+.content-image-wrapper__rh {
+    width: 100%;
+}
+
+/* Images */
+.content-image__rh {
+    width: 100%;
+    height: auto;
+    background: #D9D9D9;
+    object-fit: cover;
+}
+
+/* Text content */
+.content-text__rh {
+    color: white;
+    font-size: {{ section.settings.font_size_desktop }}px;
+    font-family: 'Siemens Sans', Arial, sans-serif;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.content-text-bold__rh {
+    font-weight: 700;
+}
+
+.content-text-normal__rh {
+    font-weight: 400;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .rh-about-info-detail {
+        padding: 50px 15px 25px;
+    }
+    
+    .content-wrapper__rh {
+        gap: 30px;
+        flex-direction: column;
+    }
+    
+    .content-column__rh {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .content-text__rh {
+        font-size: {{ section.settings.font_size_tablet }}px;
+        line-height: 1.33;
+    }
+}
+
+@media (max-width: 480px) {
+    .rh-about-info-detail {
+        padding: 30px 10px 15px;
+    }
+    
+    .content-wrapper__rh {
+        gap: 20px;
+    }
+    
+    .content-text__rh {
+        font-size: {{ section.settings.font_size_mobile }}px;
+        line-height: 1.375;
+    }
+}
+{% endstyle %}
+
+
+<div class="rh-about-info-detail">
+    <div class="container_rh">
+        <div class="content-wrapper__rh">
+            <div class="content-column__rh">
+              {% if section.settings.image_1 != blank %}
+                <div class="content-image-wrapper__rh">
+                  <img 
+                    class="content-image__rh" 
+                    src="{{ section.settings.image_1 | img_url: '800x' }}" 
+                    alt="{{ section.settings.image_1.alt | escape }}"
+                    width="auto"
+                    height="auto"
+                    loading="lazy"
+                  />
+                </div>
+              {% endif %}
+              {% if section.settings.text_1 != blank %}
+                <div class="content-text__rh content-text-bold__rh">{{ section.settings.text_1 }}</div>
+              {% endif %}
+            </div>
+            <div class="content-column__rh">
+              {% if section.settings.image_2 != blank %}
+                <div class="content-image-wrapper__rh">
+                  <img 
+                    class="content-image__rh" 
+                    src="{{ section.settings.image_2 | img_url: '800x' }}" 
+                    alt="{{ section.settings.image_2.alt | escape }}"
+                    width="auto"
+                    height="auto"
+                    loading="lazy"
+                  />
+                </div>
+              {% endif %}
+              {% if section.settings.text_2_normal != blank or section.settings.text_2_bold != blank %}
+                <div class="content-text__rh">
+                  {% if section.settings.text_2_normal != blank %}
+                    <span class="content-text-normal__rh">{{ section.settings.text_2_normal }}</span>
+                  {% endif %}
+                  {% if section.settings.text_2_bold != blank %}
+                    <span class="content-text-bold__rh">"{{ section.settings.text_2_bold }}"</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+    </div>
+</div>

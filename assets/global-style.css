@@ -10,6 +10,14 @@
   text-decoration: none;
   width: fit-content;
   display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.primary-button-master-minds:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 185, 0.3);
+  background: linear-gradient(90deg, #00e6dc 0%, #00ffb9 100%);
 }
 @media (max-width: 1024px) {
   .primary-button-master-minds {
