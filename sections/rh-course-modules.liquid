@@ -1,6 +1,6 @@
-{% comment %}
+{% comment %} 
   RH Course Modules Section
-  Uses metafields from: product.metafields.courses_plus_content.course_outline
+  Uses metafields from: product.metafields.courses_plus_content.course_outline 
 {% endcomment %}
 
 {% assign current_product = product %}
@@ -12,10 +12,13 @@
     <div class="course-accordion">
       {% assign course_outline = current_product.metafields.courses_plus_content.course_outline.value %}
 
-      {% for section in course_outline %}
+      {% for section in course_outline.sections %}
         {% unless section.removed == 1 %}
           <div class="accordion-section">
-            <button class="accordion-toggle" aria-expanded="false" aria-controls="section-{{ section.id }}">
+            <button
+              class="accordion-toggle"
+              aria-expanded="false"
+              aria-controls="section-{{ section.id }}">
               <span class="section-title">{{ section.title }}</span>
               <span class="accordion-icon">+</span>
             </button>
@@ -56,7 +59,8 @@
   }
 
   .rh-course-modules .rh-section-title {
-    font-family: 'Siemens Sans', sans-serif;
+    font-family: 'Siemens Sans'
+    , sans-serif;
     font-weight: 700;
     font-size: 36px;
     line-height: 130%;
@@ -68,7 +72,8 @@
   .course-accordion {
     width: 100%;
     margin: 0 auto;
-    font-family: 'Siemens Sans', sans-serif;
+    font-family: 'Siemens Sans'
+    , sans-serif;
   }
 
   .accordion-section {
@@ -91,7 +96,8 @@
     justify-content: space-between;
     align-items: center;
     transition: background 0.3s ease;
-    font-family: 'Siemens Sans', sans-serif;
+    font-family: 'Siemens Sans'
+    , sans-serif;
     font-weight: 600;
     font-size: 18px;
   }
@@ -145,7 +151,7 @@
     display: inline-block;
     width: 16px;
     height: 14px;
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.65991L4.5 12.1599L15 1.15991' stroke='%2300FFB9' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml, %3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.65991L4.5 12.1599L15 1.15991' stroke='%2300FFB9' stroke-width='1.5'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     margin-right: 12px;
   }
@@ -181,16 +187,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const accordionToggles = document.querySelectorAll('.accordion-toggle');
-
+  
     accordionToggles.forEach((toggle) => {
       toggle.addEventListener('click', function () {
         const content = this.nextElementSibling;
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
+  
         // Toggle aria attributes
         this.setAttribute('aria-expanded', !isExpanded);
         content.setAttribute('aria-hidden', isExpanded);
-
+  
         // Toggle icon
         const icon = this.querySelector('.accordion-icon');
         icon.textContent = isExpanded ? '+' : '-';
@@ -200,21 +206,21 @@
 </script>
 
 {% schema %}
-{
-  "name": "Course Modules",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Course Modules"
-    }
-  ],
-  "presets": [
-    {
-      "name": "RH Course Modules",
-      "category": "Course"
-    }
-  ]
-}
+  {
+    "name": "Course Modules",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Course Modules"
+      }
+    ],
+    "presets": [
+      {
+        "name": "RH Course Modules",
+        "category": "Course"
+      }
+    ]
+  }
 {% endschema %}
