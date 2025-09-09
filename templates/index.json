@@ -16,8 +16,13 @@
         "title": "Shape your future in digital design and creative coding.",
         "description": "Our latest report explores developments in generative industrial AI and how key trends like Agentic AI and Foundational Models will shape industrial applications in the coming years.",
         "button_text": "Learn More",
-        "button_link": "",
-        "image": "shopify://shop_images/mm-hero-image.png"
+        "button_link": "shopify://collections/all",
+        "image": "shopify://shop_images/mm-hero-image.png",
+        "padding_top": 200,
+        "padding_bottom": 200,
+        "title_font_size_desktop": 40,
+        "title_font_size_tablet": 30,
+        "title_font_size_mobile": 24
       }
     },
     "rh_our_partners_sec_kTCJkj": {
@@ -171,8 +176,7 @@
       "name": "RH Reviews Section",
       "settings": {
         "tag_text": "Learn from the Best",
-        "section_title": "Featured Courses",
-        "custom_css": ""
+        "section_title": "Featured Courses"
       }
     }
   },
