@@ -41,7 +41,7 @@
       "name": "RH Footer",
       "settings": {
         "logo": "shopify://shop_images/master_minds.png",
-        "footer_menu_1": "footer",
+        "footer_menu_1": "main-menu",
         "footer_menu_2": "footer",
         "footer_menu_3": "footer",
         "footer_menu_4": "footer"
