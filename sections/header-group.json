@@ -33,6 +33,10 @@
     },
     "rh_header_tfkaUp": {
       "type": "rh-header",
+      "custom_css": [
+        ".mm-header__logo {max-width: 100px;}",
+        ".mm-header__logo img {height: 100%; max-width: 100%; object-fit: contain;}"
+      ],
       "name": "RH Header",
       "settings": {
         "logo": "shopify://shop_images/learning-paths.webp",
