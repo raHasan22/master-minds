@@ -35,7 +35,7 @@
       "type": "rh-header",
       "name": "RH Header",
       "settings": {
-        "logo": "shopify://shop_images/master_minds.png",
+        "logo": "shopify://shop_images/learning-paths.webp",
         "menu": "main-menu"
       }
     }
