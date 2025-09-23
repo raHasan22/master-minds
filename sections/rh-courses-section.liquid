@@ -1,520 +1,526 @@
 {% schema %}
-  {
-    "name": "Collection Tabs",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Section Title",
-        "default": "Featured Courses"
-      },
-      {
-        "type": "collection_list",
-        "id": "collection_list",
-        "label": "Collections",
-        "limit": 3
-      },
-      {
-        "type": "range",
-        "id": "products_limit",
-        "min": 4,
-        "max": 12,
-        "step": 1,
-        "label": "Products to show per collection",
-        "default": 8
-      }
-    ],
-    "presets": [
-      {
-        "name": "RH Collection Tabs",
-        "category": "Collection"
-      }
-    ]
-  }
-{% endschema %}
-
-{%- style -%}
-  .rh-course-section-mm {
-    padding: 80px 20px;
-    background: #000028;
-  }
-  .rh-course-section-mm .container-rh {
-    max-width: 1441px;
-    margin: 0 auto;
-  }
-  .rh-course-section-mm .container-rh .tag {
-    color: #00cccc;
-    font-family: 'Siemens Sans';
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  .rh-course-section-mm .container-rh .sec-title {
-    color: #ffffff;
-    font-family: 'Siemens Sans';
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 130%;
-    letter-spacing: normal;
-    text-align: center;
-    margin: 0 0 40px;
-  }
-
-  /* Container for tabs */
-  .rh-course-section-mm .container-rh .rh-tabs {
-    margin: 0 auto;
-  }
-
-  /* Tab buttons */
-  .rh-course-section-mm .container-rh .rh-tab-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .rh-course-section-mm .container-rh .rh-tab-button {
-    border: 1px solid #00cccc;
-    cursor: pointer;
-    border-radius: 50px;
-    padding: 8px 16px;
-    background: transparent;
-    font-family: 'Helvetica';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    color: #00cccc;
-  }
-
-  .rh-course-section-mm .container-rh .rh-tab-button:hover {
-    background-color: #00cccc;
-    color: #ffffff;
-  }
-
-  .rh-course-section-mm .container-rh .rh-tab-button.rh-active {
-    background-color: #00cccc;
-    color: #ffffff;
-  }
-
-  /* Tab content */
-  .rh-course-section-mm .container-rh .rh-tab-contents {
-    margin-top: 40px;
-  }
-
-  .rh-course-section-mm .container-rh .rh-tab-content {
-    display: none;
-  }
-
-  .rh-course-section-mm .container-rh .rh-tab-content.rh-active {
-    display: block;
-  }
-
-  .rh-course-section-mm .container-rh .course-cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 16px;
-  }
-
-  /* First row: 2 cards, each spans 6 columns */
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(1),
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(2) {
-    grid-column: span 6;
-  }
-
-  /* Second row: 3 cards, each spans 4 columns */
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(3),
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(4),
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(5) {
-    grid-column: span 4;
-  }
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(3) .rh-course-card__image,
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(4) .rh-course-card__image,
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(5) .rh-course-card__image {
-    height: 278px;
-  }
-
-  /* Remaining cards: 4 per row, each spans 3 columns */
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(n + 6) {
-    grid-column: span 3;
-  }
-  .rh-course-section-mm .container-rh .rh-course-card:nth-child(n + 6) .rh-course-card__image {
-    height: 205px;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 991px) {
-    .rh-course-section-mm .container-rh .rh-course-card {
-      grid-column: span 6 !important;
+    {
+      "name": "Collection Tabs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag Text",
+          "default": "Learn from the Best"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Featured Courses"
+        },
+        {
+          "type": "collection_list",
+          "id": "collection_list",
+          "label": "Collections",
+          "limit": 3
+        },
+        {
+          "type": "range",
+          "id": "products_limit",
+          "min": 4,
+          "max": 12,
+          "step": 1,
+          "label": "Products to show per collection",
+          "default": 8
+        }
+      ],
+      "presets": [
+        {
+          "name": "RH Collection Tabs",
+          "category": "Collection"
+        }
+      ]
+    }
+  {% endschema %}
+  
+  {%- style -%}
+    .rh-course-section-mm {
+      padding: 80px 20px;
+      background: #000028;
+    }
+    .rh-course-section-mm .container-rh {
+      max-width: 1441px;
+      margin: 0 auto;
     }
     .rh-course-section-mm .container-rh .tag {
-      font-size: 14px;
+      color: #00cccc;
+      font-family: 'Siemens Sans';
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0;
     }
     .rh-course-section-mm .container-rh .sec-title {
-      font-size: 30px;
-      margin: 0 0 30px;
+      color: #ffffff;
+      font-family: 'Siemens Sans';
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 130%;
+      letter-spacing: normal;
+      text-align: center;
+      margin: 0 0 40px;
     }
-  }
-
-  @media (max-width: 767px) {
-    .rh-course-section-mm .container-rh .rh-course-card {
-      grid-column: span 12 !important;
+  
+    /* Container for tabs */
+    .rh-course-section-mm .container-rh .rh-tabs {
+      margin: 0 auto;
     }
-  }
-
-  /* card css  */
-  .rh-course-card {
-    align-self: stretch;
-    background: #00183c;
-    border-radius: 14px;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .rh-course-card__image {
-    align-self: stretch;
-    height: 424.45px;
-    width: 100%;
-    object-fit: cover;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-  }
-
-  .rh-course-card__header {
-    align-self: stretch;
-    padding: 32px 24px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .rh-course-card__title-container {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .rh-course-card__title {
-    align-self: stretch;
-    height: 52px;
-    color: white;
-    font-size: 20px;
-    font-family: 'Siemens Sans';
-    font-weight: 700;
-    line-height: 26px;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-decoration: none;
-  }
-
-  .rh-course-card__badge {
-    padding: 2px 5px;
-    border-radius: 4px;
-    outline: 1px solid white;
-    outline-offset: -1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .rh-course-card__badge-text {
-    color: white;
-    font-size: 14px;
-    font-family: Arial;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .rh-course-card__meta {
-    align-self: stretch;
-    padding: 24px;
-    border-top: 1px solid #005656;
-    border-bottom: 1px solid #005656;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .rh-course-card__author {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .rh-course-card__author span {
-    font-size: 14px;
-    font-family: Arial;
-    letter-spacing: 0.2px;
-    line-height: 24px;
-    color: white;
-  }
-
-  .rh-course-card__author .bold {
-    font-weight: 700;
-  }
-
-  .rh-course-card__pricing {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .rh-course-card__discount {
-    font-size: 14px;
-    font-family: Arial;
-    font-weight: 400;
-    line-height: 16px;
-    color: white;
-  }
-
-  .rh-course-card__old-price {
-    color: #00ffb9;
-    text-decoration: line-through;
-  }
-
-  .rh-course-card__price {
-    color: white;
-    font-family: 'Siemens Sans';
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 36.4px;
-  }
-
-  .rh-course-card__footer {
-    align-self: stretch;
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .rh-course-card__score-wrapper {
-    width: 102px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .rh-course-card__score-label {
-    font-size: 14px;
-    font-family: Arial;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-    color: white;
-  }
-
-  .rh-course-card__score-label .bold {
-    font-weight: 700;
-  }
-
-  .rh-course-card__score-bar-bg {
-    background: #ededed;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .rh-course-card__score-bar-fill {
-    display: block !important;
-    height: 4px;
-    background: #00ffb9;
-    flex: 1 1 0;
-  }
-
-  .rh-course-card__icon {
-    width: 32px;
-    height: 32px;
-    position: relative;
-  }
-  @media (max-width: 991px) {
-    .rh-course-card__image {
-      height: 324.45px !important;
+  
+    /* Tab buttons */
+    .rh-course-section-mm .container-rh .rh-tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
     }
-  }
-  @media (max-width: 767px) {
+  
+    .rh-course-section-mm .container-rh .rh-tab-button {
+      border: 1px solid #00cccc;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 8px 16px;
+      background: transparent;
+      font-family: 'Helvetica';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: #00cccc;
+    }
+  
+    .rh-course-section-mm .container-rh .rh-tab-button:hover {
+      background-color: #00cccc;
+      color: #ffffff;
+    }
+  
+    .rh-course-section-mm .container-rh .rh-tab-button.rh-active {
+      background-color: #00cccc;
+      color: #ffffff;
+    }
+  
+    /* Tab content */
+    .rh-course-section-mm .container-rh .rh-tab-contents {
+      margin-top: 40px;
+    }
+  
+    .rh-course-section-mm .container-rh .rh-tab-content {
+      display: none;
+    }
+  
+    .rh-course-section-mm .container-rh .rh-tab-content.rh-active {
+      display: block;
+    }
+  
+    .rh-course-section-mm .container-rh .course-cards {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+  
+    /* First row: 2 cards, each spans 6 columns */
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(1),
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(2) {
+      grid-column: span 6;
+    }
+  
+    /* Second row: 3 cards, each spans 4 columns */
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(3),
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(4),
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(5) {
+      grid-column: span 4;
+    }
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(3) .rh-course-card__image,
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(4) .rh-course-card__image,
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(5) .rh-course-card__image {
+      height: 278px;
+    }
+  
+    /* Remaining cards: 4 per row, each spans 3 columns */
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(n + 6) {
+      grid-column: span 3;
+    }
+    .rh-course-section-mm .container-rh .rh-course-card:nth-child(n + 6) .rh-course-card__image {
+      height: 205px;
+    }
+  
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .rh-course-section-mm .container-rh .rh-course-card {
+        grid-column: span 6 !important;
+      }
+      .rh-course-section-mm .container-rh .tag {
+        font-size: 14px;
+      }
+      .rh-course-section-mm .container-rh .sec-title {
+        font-size: 30px;
+        margin: 0 0 30px;
+      }
+    }
+  
+    @media (max-width: 767px) {
+      .rh-course-section-mm .container-rh .rh-course-card {
+        grid-column: span 12 !important;
+      }
+    }
+  
+    /* card css  */
+    .rh-course-card {
+      align-self: stretch;
+      background: #00183c;
+      border-radius: 14px;
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  
     .rh-course-card__image {
       align-self: stretch;
-      height: 304.45px !important;
+      height: 424.45px;
       width: 100%;
       object-fit: cover;
       border-top-left-radius: 14px;
       border-top-right-radius: 14px;
     }
+  
     .rh-course-card__header {
-      padding: 18px 12px;
-      gap: 14px;
+      align-self: stretch;
+      padding: 32px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 24px;
     }
+  
+    .rh-course-card__title-container {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  
+    .rh-course-card__title {
+      align-self: stretch;
+      height: 52px;
+      color: white;
+      font-size: 20px;
+      font-family: 'Siemens Sans';
+      font-weight: 700;
+      line-height: 26px;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-decoration: none;
+    }
+  
+    .rh-course-card__badge {
+      padding: 2px 5px;
+      border-radius: 4px;
+      outline: 1px solid white;
+      outline-offset: -1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .rh-course-card__badge-text {
+      color: white;
+      font-size: 14px;
+      font-family: Arial;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+  
     .rh-course-card__meta {
-      padding: 12px;
+      align-self: stretch;
+      padding: 24px;
+      border-top: 1px solid #005656;
+      border-bottom: 1px solid #005656;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+  
+    .rh-course-card__author {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+  
+    .rh-course-card__author span {
+      font-size: 14px;
+      font-family: Arial;
+      letter-spacing: 0.2px;
+      line-height: 24px;
+      color: white;
+    }
+  
+    .rh-course-card__author .bold {
+      font-weight: 700;
+    }
+  
+    .rh-course-card__pricing {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .rh-course-card__discount {
+      font-size: 14px;
+      font-family: Arial;
+      font-weight: 400;
+      line-height: 16px;
+      color: white;
+    }
+  
+    .rh-course-card__old-price {
+      color: #00ffb9;
+      text-decoration: line-through;
+    }
+  
+    .rh-course-card__price {
+      color: white;
+      font-family: 'Siemens Sans';
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 36.4px;
+    }
+  
     .rh-course-card__footer {
-      padding: 12px 12px 20px;
+      align-self: stretch;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-  }
-{%- endstyle -%}
-
-<section class="rh-course-section-mm">
-  <div class="container-rh">
-    <p class="tag">Learn from the Best</p>
-    <h2 class="sec-title">Featured Courses</h2>
-    <div class="rh-tabs">
-      <div class="rh-tab-buttons">
-        {% for collection in section.settings.collection_list %}
-          <button class="rh-tab-button {% if forloop.first %}rh-active{% endif %}" data-tab="rh-tab-{{ collection.handle }}">
-            {{ collection.title }}
-          </button>
-        {% endfor %}
-      </div>
-      <div class="rh-tab-contents">
-        {% for collection in section.settings.collection_list %}
-          <div class="rh-tab-content {% if forloop.first %}rh-active{% endif %}" id="rh-tab-{{ collection.handle }}">
-            <div class="course-cards">
-              {% for product in collection.products limit: section.settings.products_limit %}
-                <div class="rh-course-card">
-                  <img
-                    class="rh-course-card__image"
-                    src="{{ product.featured_image | img_url: '708x424', crop: 'center' }}"
-                    alt="{{ product.featured_image.alt }}"
-                    width="auto"
-                    height="auto">
-
-                  <div class="rh-course-card__header">
-                    <div class="rh-course-card__title-container">
-                      <a href="{{ product.url }}" class="rh-course-card__title">
-                        {{ product.title }}
-                      </a>
-                    </div>
-                    {% if product.compare_at_price > product.price %}
-                      <div class="rh-course-card__badge">
-                        <div class="rh-course-card__badge-text">Offer</div>
+  
+    .rh-course-card__score-wrapper {
+      width: 102px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+  
+    .rh-course-card__score-label {
+      font-size: 14px;
+      font-family: Arial;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+      color: white;
+    }
+  
+    .rh-course-card__score-label .bold {
+      font-weight: 700;
+    }
+  
+    .rh-course-card__score-bar-bg {
+      background: #ededed;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .rh-course-card__score-bar-fill {
+      display: block !important;
+      height: 4px;
+      background: #00ffb9;
+      flex: 1 1 0;
+    }
+  
+    .rh-course-card__icon {
+      width: 32px;
+      height: 32px;
+      position: relative;
+    }
+    @media (max-width: 991px) {
+      .rh-course-card__image {
+        height: 324.45px !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .rh-course-card__image {
+        align-self: stretch;
+        height: 304.45px !important;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+      }
+      .rh-course-card__header {
+        padding: 18px 12px;
+        gap: 14px;
+      }
+      .rh-course-card__meta {
+        padding: 12px;
+      }
+      .rh-course-card__footer {
+        padding: 12px 12px 20px;
+      }
+    }
+  {%- endstyle -%}
+  
+  <section class="rh-course-section-mm">
+    <div class="container-rh">
+      <p class="tag">{{ section.settings.tag }}</p>
+      <h2 class="sec-title">{{ section.settings.title }}</h2>
+      <div class="rh-tabs">
+        <div class="rh-tab-buttons">
+          {% for collection in section.settings.collection_list %}
+            <button class="rh-tab-button {% if forloop.first %}rh-active{% endif %}" data-tab="rh-tab-{{ collection.handle }}">
+              {{ collection.title }}
+            </button>
+          {% endfor %}
+        </div>
+        <div class="rh-tab-contents">
+          {% for collection in section.settings.collection_list %}
+            <div class="rh-tab-content {% if forloop.first %}rh-active{% endif %}" id="rh-tab-{{ collection.handle }}">
+              <div class="course-cards">
+                {% for product in collection.products limit: section.settings.products_limit %}
+                  <div class="rh-course-card">
+                    <img
+                      class="rh-course-card__image"
+                      src="{{ product.featured_image | img_url: '708x424', crop: 'center' }}"
+                      alt="{{ product.featured_image.alt }}"
+                      width="auto"
+                      height="auto">
+  
+                    <div class="rh-course-card__header">
+                      <div class="rh-course-card__title-container">
+                        <a href="{{ product.url }}" class="rh-course-card__title">
+                          {{ product.title }}
+                        </a>
                       </div>
-                    {% endif %}
-                  </div>
-
-                  <div class="rh-course-card__meta">
-                    <div class="rh-course-card__author">
-                      <span>By</span>
-                      <span class="bold">
-                        {{ product.vendor | default: shop.name }}
-                      </span>
-                    </div>
-                    <div class="rh-course-card__pricing">
                       {% if product.compare_at_price > product.price %}
-                        <div class="rh-course-card__discount">
-                          {% assign discount = product.compare_at_price
- | minus: product.price
- | times: 100.0
- | divided_by: product.compare_at_price
- | round
-                          %}
-                          {{ discount }}% off<br>
-                          <span class="rh-course-card__old-price">
-                            {{ product.compare_at_price | money }}
-                          </span>
+                        <div class="rh-course-card__badge">
+                          <div class="rh-course-card__badge-text">Offer</div>
                         </div>
                       {% endif %}
-                      <div class="rh-course-card__price">
-                        <sup>{{ cart.currency.symbol }}</sup>
-                        {{ product.price | money_without_currency }}</div>
                     </div>
-                  </div>
-
-                  <div class="rh-course-card__footer">
-                    <div class="rh-course-card__score-wrapper">
-                      {% assign rating = product.metafields.custom.course_rating.value | default: 5 %}
-                      {% assign rating_max = product.metafields.reviews.rating.value.scale_max | default: 5 %}
-                      <div class="rh-course-card__score-label">
-                        Score
-                        <span class="bold">{{ rating | round: 1 }}/{{ rating_max }}</span>
+  
+                    <div class="rh-course-card__meta">
+                      <div class="rh-course-card__author">
+                        <span>By</span>
+                        <span class="bold">
+                          {{ product.vendor | default: shop.name }}
+                        </span>
                       </div>
-                      <div class="rh-course-card__score-bar-bg">
-                        <div class="rh-course-card__score-bar-fill" style="width: {{ rating | divided_by: rating_max | times: 100 }}%"></div>
+                      <div class="rh-course-card__pricing">
+                        {% if product.compare_at_price > product.price %}
+                          <div class="rh-course-card__discount">
+                            {% assign discount = product.compare_at_price
+   | minus: product.price
+   | times: 100.0
+   | divided_by: product.compare_at_price
+   | round
+                            %}
+                            {{ discount }}% off<br>
+                            <span class="rh-course-card__old-price">
+                              {{ product.compare_at_price | money }}
+                            </span>
+                          </div>
+                        {% endif %}
+                        <div class="rh-course-card__price">
+                          <sup>{{ cart.currency.symbol }}</sup>
+                          {{ product.price | money_without_currency }}</div>
                       </div>
                     </div>
-                    <div class="rh-course-card__icon">
-                      <a href="{{ product.url }}">
-                        <svg
-                          width="32"
-                          height="33"
-                          viewBox="0 0 32 33"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <mask
-                            id="mask0_88_480"
-                            style="mask-type: luminance"
-                            maskUnits="userSpaceOnUse"
-                            x="0"
-                            y="0"
+  
+                    <div class="rh-course-card__footer">
+                      <div class="rh-course-card__score-wrapper">
+                        {% assign rating = product.metafields.custom.course_rating.value | default: 5 %}
+                        {% assign rating_max = product.metafields.reviews.rating.value.scale_max | default: 5 %}
+                        <div class="rh-course-card__score-label">
+                          Score
+                          <span class="bold">{{ rating | round: 1 }}/{{ rating_max }}</span>
+                        </div>
+                        <div class="rh-course-card__score-bar-bg">
+                          <div class="rh-course-card__score-bar-fill" style="width: {{ rating | divided_by: rating_max | times: 100 }}%"></div>
+                        </div>
+                      </div>
+                      <div class="rh-course-card__icon">
+                        <a href="{{ product.url }}">
+                          <svg
                             width="32"
-                            height="33">
-                            <path d="M32 0.669434H0V32.6694H32V0.669434Z" fill="white" />
-                          </mask>
-                          <g mask="url(#mask0_88_480)">
-                          <mask
-                            id="mask1_88_480"
-                            style="mask-type: luminance"
-                            maskUnits="userSpaceOnUse"
-                            x="0"
-                            y="0"
-                            width="32"
-                            height="33">
-                            <path d="M0 0.669434H32V32.6694H0V0.669434Z" fill="white" />
-                          </mask>
-                          <g mask="url(#mask1_88_480)">
-                            <path d="M29.232 16.123C29.2293 16.1166 29.226 16.1105 29.2233 16.1043C29.2095 16.0734 29.1953 16.0428 29.1791 16.0129C29.1667 15.9896 29.1527 15.9674 29.1389 15.945C29.1315 15.9329 29.1247 15.9205 29.1168 15.9086C29.0573 15.8182 28.9867 15.736 28.9076 15.6625L23.6161 10.371C23.0961 9.85096 22.2561 9.85096 21.7361 10.371C21.2161 10.891 21.2161 11.731 21.7361 12.251L24.7894 15.3043H4.00275C3.26943 15.3043 2.66943 15.9043 2.66943 16.6376C2.66943 17.371 3.26943 17.971 4.00275 17.971H24.7894L21.7227 21.0376C21.2027 21.5576 21.2027 22.3976 21.7227 22.9176C21.9894 23.171 22.3227 23.3043 22.6694 23.3043C23.0161 23.3043 23.3494 23.171 23.6161 22.9176L28.9494 17.5843C29.3453 17.1884 29.4389 16.6074 29.232 16.123Z" fill="#00CCCC" />
+                            height="33"
+                            viewBox="0 0 32 33"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask
+                              id="mask0_88_480"
+                              style="mask-type: luminance"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="33">
+                              <path d="M32 0.669434H0V32.6694H32V0.669434Z" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0_88_480)">
+                            <mask
+                              id="mask1_88_480"
+                              style="mask-type: luminance"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="33">
+                              <path d="M0 0.669434H32V32.6694H0V0.669434Z" fill="white" />
+                            </mask>
+                            <g mask="url(#mask1_88_480)">
+                              <path d="M29.232 16.123C29.2293 16.1166 29.226 16.1105 29.2233 16.1043C29.2095 16.0734 29.1953 16.0428 29.1791 16.0129C29.1667 15.9896 29.1527 15.9674 29.1389 15.945C29.1315 15.9329 29.1247 15.9205 29.1168 15.9086C29.0573 15.8182 28.9867 15.736 28.9076 15.6625L23.6161 10.371C23.0961 9.85096 22.2561 9.85096 21.7361 10.371C21.2161 10.891 21.2161 11.731 21.7361 12.251L24.7894 15.3043H4.00275C3.26943 15.3043 2.66943 15.9043 2.66943 16.6376C2.66943 17.371 3.26943 17.971 4.00275 17.971H24.7894L21.7227 21.0376C21.2027 21.5576 21.2027 22.3976 21.7227 22.9176C21.9894 23.171 22.3227 23.3043 22.6694 23.3043C23.0161 23.3043 23.3494 23.171 23.6161 22.9176L28.9494 17.5843C29.3453 17.1884 29.4389 16.6074 29.232 16.123Z" fill="#00CCCC" />
+                            </g>
                           </g>
-                        </g>
-                      </svg>
-                    </a>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</div></section><script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.rh-tab-button');
-    const tabContents = document.querySelectorAll('.rh-tab-content');
-
-    tabButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        const target = this.getAttribute('data-tab');
-
-        tabButtons.forEach(function (btn) {
-          btn.classList.remove('rh-active');
+  </div></section><script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.rh-tab-button');
+      const tabContents = document.querySelectorAll('.rh-tab-content');
+  
+      tabButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const target = this.getAttribute('data-tab');
+  
+          tabButtons.forEach(function (btn) {
+            btn.classList.remove('rh-active');
+          });
+          tabContents.forEach(function (content) {
+            content.classList.remove('rh-active');
+          });
+  
+          this.classList.add('rh-active');
+          document.getElementById(target).classList.add('rh-active');
         });
-        tabContents.forEach(function (content) {
-          content.classList.remove('rh-active');
-        });
-
-        this.classList.add('rh-active');
-        document.getElementById(target).classList.add('rh-active');
       });
     });
-  });
-</script>
+  </script>
