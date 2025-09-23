@@ -55,56 +55,71 @@
         "countdown_seconds": 2
       }
     },
-    "rh_reviews_CbykRh": {
+    "rh_reviews_CKnj4e": {
       "type": "rh-reviews",
       "blocks": {
-        "normal_review_EL3DJq": {
+        "normal_review_nmk3ND": {
           "type": "normal_review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2.png",
+            "name": "Mark G",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“ I just finished my course, learnt quite a lot of information, and really enjoyed it. Its really good value, will help me achieve my goals, and further my career. well recommended.”"
           }
         },
-        "normal_review_n3UzKy": {
+        "normal_review_jn9jBh": {
           "type": "normal_review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2_1.png",
+            "name": "Giles",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“Informative and very helpful course, will go very in depth which is good. I would recommend.”"
           }
         },
-        "reverse_review_E9CRbH": {
-          "type": "reverse_review",
+        "normal_review_DWPXDP": {
+          "type": "normal_review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2_3.png",
+            "name": "Ali",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“A very interesting course that was knowledgeable and insightful.”"
           }
         },
-        "reverse_review_tMVTUU": {
+        "reverse_review_VTNYcD": {
           "type": "reverse_review",
           "settings": {
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "avatar": "shopify://shop_images/image_2_2.png",
+            "name": "Emmanuel Sinkamba",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“Business Management, Business Analysis & Business Performance Management Diploma Is rely a game chager ,to limbing the ladder business at the top.”"
+          }
+        },
+        "reverse_review_dL6XiF": {
+          "type": "reverse_review",
+          "settings": {
+            "avatar": "shopify://shop_images/image_2_3.png",
+            "name": "Nicola Palmer",
+            "role": "",
+            "rating": 5,
+            "review_text": "“Although I have been working as a Director and operational Manager I had not completed a formal course linked to Business Management. This course embedded and presented some new learning , I always suggest taking notes as they can be useful in future. Course content and length were just right”"
           }
         }
       },
       "block_order": [
-        "normal_review_EL3DJq",
-        "normal_review_n3UzKy",
-        "reverse_review_E9CRbH",
-        "reverse_review_tMVTUU"
+        "normal_review_nmk3ND",
+        "normal_review_jn9jBh",
+        "normal_review_DWPXDP",
+        "reverse_review_VTNYcD",
+        "reverse_review_dL6XiF"
       ],
       "name": "RH Reviews Section",
       "settings": {
         "tag_text": "Learn from the Best",
-        "section_title": "Featured Courses"
+        "section_title": "Hear From Our Learners"
       }
     }
   },
@@ -112,6 +127,6 @@
     "banner",
     "product-grid",
     "rh_offer_ends_sec_abdayg",
-    "rh_reviews_CbykRh"
+    "rh_reviews_CKnj4e"
   ]
 }
