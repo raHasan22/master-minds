@@ -13,9 +13,9 @@
       "type": "rh-homepage-hero",
       "name": "RH Dynamic Design Section",
       "settings": {
-        "title": "Shape your future in digital design and creative coding.",
-        "description": "Our latest report explores developments in generative industrial AI and how key trends like Agentic AI and Foundational Models will shape industrial applications in the coming years.",
-        "button_text": "Learn More",
+        "title": "Where Educators and Learners Unlock Their Potential",
+        "description": "Practical, accredited courses designed to help you teach with impact, lead with confidence, and connect across languages.",
+        "button_text": "Start Learning",
         "button_link": "shopify://collections/all",
         "image": "shopify://shop_images/mm-hero-image.png",
         "padding_top": 200,
@@ -111,11 +111,11 @@
       "settings": {
         "background_image": "shopify://shop_images/offer-sec-bg.png",
         "tag_text": "Learn from the Best",
-        "title": "Enjoy over 100 Courses for Digital Creatives",
-        "description": "5+ new courses added every month.",
+        "title": "Access 500+ Courses in Teaching & Language",
+        "description": "New courses added monthly to keep your skills sharp and relevant.",
         "old_price": "£25",
-        "new_price": "£12",
-        "button_text": "Start Learning",
+        "new_price": "£13",
+        "button_text": "Start Learning Now",
         "button_link": "",
         "countdown_days": 8,
         "countdown_hours": 0,
@@ -176,7 +176,7 @@
       "name": "RH Reviews Section",
       "settings": {
         "tag_text": "Learn from the Best",
-        "section_title": "Featured Courses"
+        "section_title": "Hear From Our Learners"
       }
     }
   },
