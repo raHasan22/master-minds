@@ -105,10 +105,9 @@
       "name": "About Info Detail Section",
       "settings": {
         "image_1": "shopify://shop_images/Rectangle_34624364.png",
-        "text_1": "The Masterminds recognize the talent and effort of the best web designers, developers and agencies in the world.",
+        "text_1": "At Learning Paths, we believe education is more than information — it’s transformation. Our mission is to empower teachers, trainers, and learners worldwide with the tools, skills, and confidence to unlock their potential.",
         "image_2": "shopify://shop_images/Rectangle_34624365.png",
-        "text_2_normal": "A meeting point, where digital design professionals from across the globe find inspiration, impart knowledge and connect, and share constructive, respectful critiques.",
-        "text_2_bold": "Always questioning, always evolving",
+        "text_2_normal": "Whether you’re mastering a new language, refining your teaching craft, or leading teams through learning, we provide the structure and support to help you thrive.",
         "padding_top": 100,
         "padding_bottom": 50,
         "gap_between_columns": 60,

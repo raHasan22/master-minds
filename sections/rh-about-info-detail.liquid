@@ -31,12 +31,6 @@
       "default": "A meeting point, where digital design professionals from across the globe find inspiration, impart knowledge and connect, and share constructive, respectful critiques."
     },
     {
-      "type": "text",
-      "id": "text_2_bold",
-      "label": "Second Text - Bold Weight",
-      "default": "Always questioning, always evolving"
-    },
-    {
       "type": "header",
       "content": "Spacing Settings"
     },
@@ -160,10 +154,6 @@
     word-wrap: break-word;
 }
 
-.content-text-bold__rh {
-    font-weight: 700;
-}
-
 .content-text-normal__rh {
     font-weight: 400;
 }
@@ -224,7 +214,7 @@
                 </div>
               {% endif %}
               {% if section.settings.text_1 != blank %}
-                <div class="content-text__rh content-text-bold__rh">{{ section.settings.text_1 }}</div>
+                <div class="content-text__rh">{{ section.settings.text_1 }}</div>
               {% endif %}
             </div>
             <div class="content-column__rh">
@@ -240,13 +230,10 @@
                   />
                 </div>
               {% endif %}
-              {% if section.settings.text_2_normal != blank or section.settings.text_2_bold != blank %}
+              {% if section.settings.text_2_normal != blank %}
                 <div class="content-text__rh">
                   {% if section.settings.text_2_normal != blank %}
                     <span class="content-text-normal__rh">{{ section.settings.text_2_normal }}</span>
-                  {% endif %}
-                  {% if section.settings.text_2_bold != blank %}
-                    <span class="content-text-bold__rh">"{{ section.settings.text_2_bold }}"</span>
                   {% endif %}
                 </div>
               {% endif %}
