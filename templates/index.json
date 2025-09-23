@@ -130,46 +130,57 @@
           "type": "normal_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2.png",
-            "name": "Crystal Maiden",
-            "role": "UIUX Designer",
+            "name": "Mark G",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“ I just finished my course, learnt quite a lot of information, and really enjoyed it. Its really good value, will help me achieve my goals, and further my career. well recommended.”"
           }
         },
         "review_RbYr4B": {
           "type": "normal_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_1.png",
-            "name": "Dazzle Healer",
-            "role": "Front End Developer",
+            "name": "Giles",
+            "role": "",
             "rating": 5,
-            "review_text": "I've used other kits, but this one is the best. The attention to detail and usability are truly amazing for all designers. I highly recommend it for any type of project."
+            "review_text": "“Informative and very helpful course, will go very in depth which is good. I would recommend.”"
+          }
+        },
+        "normal_review_eXaxaC": {
+          "type": "normal_review",
+          "settings": {
+            "avatar": "shopify://shop_images/image_2_3.png",
+            "name": "Ali",
+            "role": "",
+            "rating": 5,
+            "review_text": "“A very interesting course that was knowledgeable and insightful.”"
           }
         },
         "review_UA6jbd": {
           "type": "reverse_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_2.png",
-            "name": "Mirana Marci",
-            "role": "3D Designer",
+            "name": "Emmanuel Sinkamba",
+            "role": "",
             "rating": 5,
-            "review_text": "This UI Kit is incredibly helpful for my design process. The icons and illustrations are clean, modern, and save me a lot of time. It's perfect for beginners and professionals alike."
+            "review_text": "“Business Management, Business Analysis & Business Performance Management Diploma Is rely a game chager ,to limbing the ladder business at the top.”"
           }
         },
         "review_gy4WNF": {
           "type": "reverse_review",
           "settings": {
             "avatar": "shopify://shop_images/image_2_3.png",
-            "name": "Bimosaurus",
-            "role": "Graphic Designer",
+            "name": "Nicola Palmer",
+            "role": "",
             "rating": 5,
-            "review_text": "Amazing work! The color schemes are vibrant, and the icons fit perfectly with all my projects, especially modern UI designs. It makes everything look polished and user-friendly instantly."
+            "review_text": "“Although I have been working as a Director and operational Manager I had not completed a formal course linked to Business Management. This course embedded and presented some new learning , I always suggest taking notes as they can be useful in future. Course content and length were just right”"
           }
         }
       },
       "block_order": [
         "review_BLQdU6",
         "review_RbYr4B",
+        "normal_review_eXaxaC",
         "review_UA6jbd",
         "review_gy4WNF"
       ],
