@@ -96,7 +96,8 @@
       "type": "rh-courses-section",
       "name": "Rh Collection Tabs",
       "settings": {
-        "title": "Featured Courses",
+        "tag": "Learn with Confidence",
+        "title": "500+ Accredited Courses",
         "collection_list": [
           "all-courses",
           "development",
