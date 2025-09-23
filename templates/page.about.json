@@ -105,7 +105,7 @@
       "name": "About Info Detail Section",
       "settings": {
         "image_1": "shopify://shop_images/Rectangle_34624364.png",
-        "text_1": "At Learning Paths, we believe education is more than information — it’s transformation. Our mission is to empower teachers, trainers, and learners worldwide with the tools, skills, and confidence to unlock their potential.",
+        "text_1": "At <b>Learning Paths,</b> we believe education is more than information — it’s transformation. Our mission is to empower teachers, trainers, and learners worldwide with the tools, skills, and confidence to unlock their potential.",
         "image_2": "shopify://shop_images/Rectangle_34624365.png",
         "text_2_normal": "Whether you’re mastering a new language, refining your teaching craft, or leading teams through learning, we provide the structure and support to help you thrive.",
         "padding_top": 100,
@@ -121,8 +121,8 @@
       "name": "About Reversable Site Detail",
       "settings": {
         "image": "shopify://shop_images/Rectangle_34624364_1.png",
-        "title": "Who are the Mastermind jury?",
-        "description": "A panel of expert digital creatives, made up of designers, developers, and agencies from all over the world who have demonstrated their talent and experience in the field of digital design. Their role is to assess and carefully score the web projects that are submitted to Masterminds on a daily basis.",
+        "title": "Our Story",
+        "description": "Learning Paths started with one idea: great trainers build great learners. From our early beginnings providing specialised training resources, we’ve grown into a global hub of education and language development. Today, thousands of professionals trust Learning Paths to guide their journey — not just to learn, but to lead.",
         "button_text": "More Info",
         "button_link": "shopify://collections/all",
         "flex_direction": "row",
@@ -142,8 +142,8 @@
       "name": "About Reversable Site Detail",
       "settings": {
         "image": "shopify://shop_images/Rectangle_34624364_2.png",
-        "title": "Digital Thinkers Conferences",
-        "description": "Our conferences offer a space for our community to meet in person, share ideas, learn and be inspired by talks and workshops from the most visionary speakers in the industry. The events take place in iconic cities across the world from San Francisco, New York and L.A., to Tokyo, Paris, Berlin, Amsterdam and London.",
+        "title": "Join the Movement",
+        "description": "Education is evolving — and so should the way we teach and learn. At Learning Paths, we’re here to guide you every step of the way, whether you’re an aspiring trainer, a language learner, or an organization committed to excellence.",
         "button_text": "More Info",
         "button_link": "",
         "flex_direction": "row-reverse",
@@ -163,8 +163,8 @@
       "name": "About Reversable Site Detail",
       "settings": {
         "image": "shopify://shop_images/Rectangle_34624364_3.png",
-        "title": "We also love to write books",
-        "description": "Our editorial range includes: a yearly publication Hot Right Now: A Contemporary Landscape for Digital Thinkers which presents insights into the current paradigm shifts, technologies and trends - as well as a collection of e-books made in collaboration with the brightest minds in the industry.",
+        "title": "What Makes Us Different",
+        "description": "<b>Global Perspective</b> – Our courses bring together best practices from education systems worldwide.<br>\n<b>Accredited Excellence</b> – Internationally recognised certifications that strengthen careers.<br>\n<b>Community-Driven</b> – A supportive network of trainers and learners who grow together.<br>\n<b>Practical Outcomes</b> – Every lesson is designed for direct, real-world application.",
         "button_text": "More Info",
         "button_link": "shopify://collections/all",
         "flex_direction": "row",
