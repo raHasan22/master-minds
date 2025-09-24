@@ -41,13 +41,21 @@
             "social_link": "https://www.youtube.com/channel/UCCYo4xPsKQvenGvdYmOGZiA",
             "social_icon": "shopify://shop_images/Mask_Group_8.svg"
           }
+        },
+        "social_media_PdJ6Jf": {
+          "type": "social_media",
+          "settings": {
+            "social_link": "",
+            "social_icon": "shopify://shop_images/Mask_Group_9.svg"
+          }
         }
       },
       "block_order": [
         "social_media_aQKexE",
         "social_media_XH9qTD",
         "social_media_4FkfLe",
-        "social_media_kAWik6"
+        "social_media_kAWik6",
+        "social_media_PdJ6Jf"
       ],
       "name": "RH Footer",
       "settings": {
