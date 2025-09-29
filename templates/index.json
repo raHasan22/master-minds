@@ -17,9 +17,9 @@
         "description": "Practical, accredited courses designed to help you teach with impact, lead with confidence, and connect across languages.",
         "button_text": "Start Learning",
         "button_link": "shopify://collections/all",
-        "image": "shopify://shop_images/mm-hero-image.png",
-        "padding_top": 200,
-        "padding_bottom": 200,
+        "image": "shopify://shop_images/Where_Educators_and_Learners_Unlock_Their_Poteltial.webp",
+        "padding_top": 150,
+        "padding_bottom": 150,
         "title_font_size_desktop": 40,
         "title_font_size_tablet": 30,
         "title_font_size_mobile": 24
