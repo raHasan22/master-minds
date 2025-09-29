@@ -30,6 +30,7 @@
       "blocks": {
         "partner_logo_9HkPMD": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3050.png"
           }
@@ -42,36 +43,42 @@
         },
         "partner_logo_TmFyQH": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3052.png"
           }
         },
         "partner_logo_Ujy9jH": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3053.png"
           }
         },
         "partner_logo_HPNe6q": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3054.png"
           }
         },
         "partner_logo_FwhdWn": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3055.png"
           }
         },
         "partner_logo_xRYjk6": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3056.png"
           }
         },
         "partner_logo_zjwiQw": {
           "type": "partner_logo",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Frame_3057.png"
           }
